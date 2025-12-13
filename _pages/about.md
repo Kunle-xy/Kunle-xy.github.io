@@ -27,22 +27,31 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-## Bridging Engineering and AI
+## AI and Infrastructure Management
 
-I am a Ph.D. candidate at Iowa State University dedicated to modernizing civil infrastructure management. My work sits at the intersection of Civil Engineering and Computer Science, where I apply advanced machine learning techniques to real-world problems.
+I am a PhD candidate at Iowa State University working at the intersection of Civil Engineering and Computer Science. My research centers on rethinking how infrastructure condition is assessed, shifting from labor intensive manual inspection toward data driven, AI enabled decision making. My academic work can be found on [Google Scholar](https://scholar.google.com/citations?user=YOUR_SCHOLAR_ID).
 
-### My Core Focus:
+### Research Focus
 
-- **Machine Learning & Computer Vision:** Leveraging deep learning and automated vision systems to identify infrastructure defects and patterns.
-- **sUAS Data Acquisition:** Piloting drones and executing flight missions for high-fidelity data collection.
-- **Big Data Analytics:** Turning noisy, unstructured data into clear, actionable insights for maintenance planning.
-- **Decision Support:** Empowering engineers to prioritize maintenance tasks effectively using data-driven models.
+• **Computer Vision for Civil Infrastructure**  
+I design and evaluate deep learning models for detecting pavement distress and structural defects from imagery, with an emphasis on robustness, generalization, and real world deployment rather than benchmark performance alone.
 
-You can view my publications on [Google Scholar](https://scholar.google.com/citations?user=YOUR_SCHOLAR_ID). When I'm not coding or researching, I'm likely analyzing a chess game or watching soccer.
+• **Autonomous Data Acquisition**  
+I use small unmanned aerial systems to collect high resolution aerial imagery for large scale infrastructure monitoring, focusing on repeatability, coverage efficiency, and data quality control.
+
+• **Data Driven Infrastructure Analytics**  
+My work involves transforming noisy and unstructured visual data into interpretable metrics that engineers and transportation agencies can trust for maintenance planning.
+
+• **Decision Support Systems**  
+Beyond detection, I develop analytical frameworks that help practitioners prioritize maintenance actions based on condition, risk, and resource constraints.
+
+Outside research, I enjoy studying chess games for their strategic depth and following soccer for similar reasons, structure, adaptation, and decision making under pressure.
 
 ---
 
-**Let's connect:**
-📧 [oguntoye@iastate.edu](mailto:oguntoye@iastate.edu)
-🔗 [LinkedIn](https://linkedin.com/in/kunleoguntoye)
-✖️ [X/Twitter](https://x.com/kizzy_waynie)
+### Contact
+
+[oguntoye@iastate.edu](mailto:oguntoye@iastate.edu)  
+[LinkedIn](https://linkedin.com/in/kunleoguntoye)  
+[Twitter](https://x.com/kizzy_waynie)
+
