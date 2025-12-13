@@ -33,13 +33,10 @@ I am a Ph.D. candidate at Iowa State University dedicated to modernizing civil i
 
 ### My Core Focus:
 
-**Machine Learning & Computer Vision:** Leveraging deep learning and automated vision systems to identify infrastructure defects and patterns.
-
-**sUAS Data Acquisition:** Piloting drones and executing flight missions for high-fidelity data collection.
-
-**Big Data Analytics:** Turning noisy, unstructured data into clear, actionable insights for maintenance planning.
-
-**Decision Support:** Empowering engineers to prioritize maintenance tasks effectively using data-driven models.
+- **Machine Learning & Computer Vision:** Leveraging deep learning and automated vision systems to identify infrastructure defects and patterns.
+- **sUAS Data Acquisition:** Piloting drones and executing flight missions for high-fidelity data collection.
+- **Big Data Analytics:** Turning noisy, unstructured data into clear, actionable insights for maintenance planning.
+- **Decision Support:** Empowering engineers to prioritize maintenance tasks effectively using data-driven models.
 
 You can view my publications on [Google Scholar](https://scholar.google.com/citations?user=YOUR_SCHOLAR_ID). When I'm not coding or researching, I'm likely analyzing a chess game or watching soccer.
 
