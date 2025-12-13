@@ -41,4 +41,11 @@ I am a Ph.D. candidate at Iowa State University dedicated to modernizing civil i
 
 **Decision Support:** Empowering engineers to prioritize maintenance tasks effectively using data-driven models.
 
-When I'm not coding or researching, I'm likely analyzing a chess game or watching soccer.
+You can view my publications on [Google Scholar](https://scholar.google.com/citations?user=YOUR_SCHOLAR_ID). When I'm not coding or researching, I'm likely analyzing a chess game or watching soccer.
+
+---
+
+**Let's connect:**
+📧 [oguntoye@iastate.edu](mailto:oguntoye@iastate.edu)
+🔗 [LinkedIn](https://linkedin.com/in/kunleoguntoye)
+✖️ [X/Twitter](https://x.com/kizzy_waynie)
