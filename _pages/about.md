@@ -29,23 +29,31 @@ latest_posts:
 
 ## AI and Infrastructure Management
 
-I am a PhD candidate at Iowa State University working at the intersection of Civil Engineering and Computer Science. My research centers on rethinking how infrastructure condition is assessed, shifting from labor intensive manual inspection toward data driven, AI enabled decision making. My academic work can be found on [Google Scholar](https://scholar.google.com/citations?user=YOUR_SCHOLAR_ID).
+I am a PhD candidate at Iowa State University working at the intersection of Civil Engineering and Computer Science. My research centers on rethinking how infrastructure condition is assessed, shifting from labor intensive manual inspection toward data driven, AI enabled decision making. My academic work can be found on [Google Scholar](https://scholar.google.com/citations?user=w1JdW5UAAAAJ&hl=en).
+
+### Education
+
+• **PhD in Intelligent Infrastructure Engineering and Computer Science**, in view  
+Iowa State University
+
+• **Master of Science in Intelligent Infrastructure Engineering**  
+Iowa State University
+
+• **Bachelor of Science in Civil Engineering**
+University of Ibadan, Nigeria
+
+---
 
 ### Research Focus
 
 • **Computer Vision for Civil Infrastructure**  
-I design and evaluate deep learning models for detecting pavement distress and structural defects from imagery, with an emphasis on robustness, generalization, and real world deployment rather than benchmark performance alone.
 
 • **Autonomous Data Acquisition**  
-I use small unmanned aerial systems to collect high resolution aerial imagery for large scale infrastructure monitoring, focusing on repeatability, coverage efficiency, and data quality control.
 
 • **Data Driven Infrastructure Analytics**  
-My work involves transforming noisy and unstructured visual data into interpretable metrics that engineers and transportation agencies can trust for maintenance planning.
 
-• **Decision Support Systems**  
-Beyond detection, I develop analytical frameworks that help practitioners prioritize maintenance actions based on condition, risk, and resource constraints.
+• **Data/Decision Science**  
 
-Outside research, I enjoy studying chess games for their strategic depth and following soccer for similar reasons, structure, adaptation, and decision making under pressure.
 
 ---
 
