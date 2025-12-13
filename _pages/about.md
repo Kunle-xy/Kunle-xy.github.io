@@ -27,21 +27,18 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I am a Ph.D. student at Iowa State University of Science and Technology, specializing in Intelligent Infrastructure Engineering and Computer Science. My research focuses on applying artificial intelligence and machine learning techniques to data science and asset management challenges.
+## Bridging Engineering and AI
 
-## Education
+I am a Ph.D. candidate at Iowa State University dedicated to modernizing civil infrastructure management. My work sits at the intersection of Civil Engineering and Computer Science, where I apply advanced machine learning techniques to real-world problems.
 
-**Ph.D.** in Intelligent Infrastructure Engineering & Computer Science *(in progress)*
-Iowa State University, Ames, Iowa
+### My Core Focus:
 
-**M.Sc.** in Intelligent Infrastructure Engineering (IIE)
-Iowa State University, Ames, Iowa
+**Machine Learning & Computer Vision:** Leveraging deep learning and automated vision systems to identify infrastructure defects and patterns.
 
-**B.Sc.** in Civil Engineering
+**sUAS Data Acquisition:** Piloting drones and executing flight missions for high-fidelity data collection.
 
-## Research Interests
+**Big Data Analytics:** Turning noisy, unstructured data into clear, actionable insights for maintenance planning.
 
-- Artificial Intelligence & Machine Learning
-- Data Science & Analytics
-- Infrastructure Asset Management
-- Intelligent Transportation Systems
+**Decision Support:** Empowering engineers to prioritize maintenance tasks effectively using data-driven models.
+
+When I'm not coding or researching, I'm likely analyzing a chess game or watching soccer.
