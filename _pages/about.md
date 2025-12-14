@@ -27,7 +27,7 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-#### Data Science | Artificial Intelligence | Infrastructure Management | Digital Twin
+#### **Data Science | Artificial Intelligence | Infrastructure Management | Digital Twin**
 
 I am a PhD candidate at Iowa State University working on the intersection of Civil Infrastructure Management and Computer Science. My research centers on rethinking how infrastructure condition is assessed, shifting from labor intensive manual inspection toward data driven, AI enabled decision making. More on my peer-reviewed academic works can be found on [Google Scholar](https://scholar.google.com/citations?user=w1JdW5UAAAAJ&hl=en).
 
