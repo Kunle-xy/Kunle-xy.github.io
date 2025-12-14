@@ -2,96 +2,186 @@
   type: map
   contents:
     - name: Full Name
-      value: Albert Einstein
-    - name: Date of Birth
-      value: 14th March 1879
-    - name: Languages
-      value: English, German
+      value: Kunle Sunday Oguntoye
+    - name: Email
+      value: oguntoye@iastate.edu
+    - name: Phone
+      value: (515) 817-9451
+    - name: Links
+      value: <a href="https://scholar.google.com/citations?user=w1JdW5UAAAAJ&hl=en">Google Scholar</a> | <a href="https://github.com/Kunle-xy">GitHub</a> | <a href="https://linkedin.com/in/kunleoguntoye">LinkedIn</a>
 
 - title: Education
   type: time_table
   contents:
-    - title: PhD
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1905
+    - title: Ph.D. Intelligent Infrastructure Engineering and Computer Science
+      institution: Iowa State University, Ames, IA
+      year: 2022 - 2026
       description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
-          contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Federal teaching diploma
-      institution: Eidgenössische Technische Hochschule, Zurich, Switzerland
-      year: 1900
+        - "Dissertation: Intelligent Computation in Infrastructure Monitoring"
+    - title: Master of Science, Intelligent Infrastructure Engineering
+      institution: Iowa State University, Ames, IA
+      year: 2022 - 2024
       description:
-        - Description 1.
-        - Description 2.
+        - "Thesis: A Practical Framework for Automatic Underground Utility Mapping"
+    - title: Bachelor of Science, Civil Engineering
+      institution: University of Ibadan, Nigeria
+      year: 2014 - 2019
+      description:
+        - GPA 6.5/7.0
+    - title: Exchange Program
+      institution: Universidad de Jaén, Andalucía, Spain
+      year: 2019 - 2020
 
 - title: Experience
   type: time_table
   contents:
-    - title: Professor of Theoretical Physics
-      institution: Institute for Advanced Study, Princeton University
-      year: 1933 - 1955
+    - title: Graduate Research Assistant / Data Scientist
+      institution: Iowa State University, Ames, IA
+      year: 2022 - Present
       description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
-          contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Visiting Professor
-      institution: California Institute of Technology, Pasadena, California, US
-      year: 1933
+        - Developed high-speed predictive analytics models for forecasting pavement conditions using multimodal data, including maintenance text records and nationwide pavement datasets, enhancing predictive accuracy and decision-making compared to traditional, cost-prohibitive software.
+        - Optimized machine learning models on cleaned datasets to accurately predict future concrete strength, improving model reliability and performance.
+        - Developed a comprehensive buried utility interconnection knowledge database for an AI-based fuzzy model, enabling accurate automatic mapping of underground utilities without excavation.
+        - Developed a web application using React and Django for utility engineers to rapidly generate underground utility maps prior to excavation, reducing wait times for contractors and increasing overall hazard awareness by 60%.
+        - Identified critical data gaps in large-scale pavement infrastructure datasets and applied large language models alongside tree-based algorithms like XGBoost to accurately predict missing maintenance information, enhancing data completeness and reliability.
+        - Developed an automated object detection framework for aboveground utility assets using drone imagery, leveraging Faster R-CNN and YOLO algorithms, facilitating the creation of high-quality datasets for automatic utility mapping and improving overall mapping efficiency.
+    - title: Developer / GIS Specialist / UAV Operations
+      institution: Iowa State University, Ames, IA
+      year: 2022 - Present
       description:
-        - Description 1.
-        - Description 2.
-
-    - title: Director
-      institution: Kaiser Wilhelm Institute for Physics, Berlin, Germany.
-      year: 1917-1933
-
-    - title: Professor of Theoretical Physics
-      institution: Karl-Ferdinand University, Prague, Czechoslovakia
-      year: 1911 - 1917
+        - Designed and implemented a full-stack geospatial data processing platform web application for Iowa gravel road analysis, solving critical scalability challenges by migrating from a monolithic Fast API application to event-driven AWS architecture (ECS Fargate, S3, EventBridge) with NextJS frontend and PostgreSQL backend; reduced upload times from 5+ minutes to <5 minutes, eliminated memory crashes on 9GB+ files, and decreased infrastructure costs by 90% through serverless auto-scaling and direct S3 integration.
+        - Developed comprehensive data collection plans, including ground control point (GCP) maps in ArcGIS Pro, improving data quality and operational efficiency.
+        - Operated UAVs as a licensed remote pilot and coordinated multi-computer workflows to rapidly process imagery into orthophotos and DEMs, enhancing data turnaround and accuracy for geospatial analysis.
+        - Developed automated ArcGIS Python toolboxes incorporating logic for DEM analysis, enabling rapid detection of pavement distress such as rutting, potholes, corrugation, and loose aggregates, reducing inspection time by over 70% compared to traditional foot-on-ground surveys and improving decision-making efficiency.
+        - Coordinated with airport and county engineers to ensure regulatory compliance and safe UAV operations, enabling efficient and risk-free data collection for infrastructure assessment.
+    - title: Machine Learning Engineer Intern (Computer Vision)
+      institution: Musco Sport Lighting, Urbandale, IA
+      year: 2023
       description:
+        - Championed the design and deployment of an end-to-end MLOps pipeline using Mlflow, TensorBoard, and AWS, improving deep learning experiment tracking and GPU utilization by 15%.
+        - Spearheaded the design and execution of a data collection strategy, leading field teams in installing and calibrating camera systems for people monitoring and counting across multiple parks.
+        - Collaborated within an Agile environment, completing my summer internship project ahead of schedule through iterative development and cross-team coordination.
+        - Increased data annotation pipeline efficiency by 30% by developing optimized algorithms and scripts to stitch key features from dual-camera frames with overlapping views.
+        - Recognized as a top 1% performer for consistently delivering high-quality results in time-sensitive data annotation tasks.
+        - Developed end-to-end machine learning models on AWS using S3 and SageMaker's built-in algorithm.
+        - Conducted hyperparameter tuning on YOLOv5, leading to improved object detection of soccer balls in video frames.
+    - title: Graduate Project Manager
+      institution: Seflam SGI, Lagos, Nigeria
+      year: 2021
+      description:
+        - Championed the 3D modeling of all mechanical and safety equipment at Nigeria Liquefied Natural Gas facility using LiDAR point cloud data and Leica Cyclone software, enhancing design accuracy and safety compliance. The digital models improved maintenance workflows and reduced reliance on 2D drawings, cutting inspection time by 50%.
+        - Collaborated with the project management team and the third-party logistics to track, monitor, and resolve project-related issues, reducing delays and improving project efficiency.
+        - Managed project bidding documentation, task scheduling, and comprehensive risk assessments, ensuring timely delivery and compliance with client and regulatory requirements.
+        - Selected as top company representative at the 2021 National Oil and Gas Conference, strengthening brand visibility and industry presence.
+        - Designed and delivered training programs for new employees and interns on proprietary software, accelerating onboarding and improving team productivity.
+    - title: Graduate Civil Engineer
+      institution: Nexant Consulting LLP, Lagos, Nigeria
+      year: 2020 - 2021
+      description:
+        - Led on-site quality control for 50+ material batches; enforced compliance for concrete and rebar, reducing rejection rates by 18% through real-time slump, air content, and compressive strength testing.
+        - Conducted 40+ phased inspections across formwork, rebar placement, pouring, and curing; flagged and resolved 25 critical deviations (e.g., dowel misalignment, honeycombing) before final acceptance.
+    - title: Undergraduate Intern
+      institution: Morgan Omonitan and Abe Ltd., Lagos, Nigeria
+      year: 2017 - 2018
+      description:
+        - Developed a fully automated Microsoft Excel spreadsheet with VBA macros for pile foundation design (axial, lateral, and settlement analysis), cutting design time by 70% and enabling real-time capacity checks for 200+ piles across 5 bridge projects.
+        - Prepared detailed structural member specifications (rebar schedules, connection details, and tolerances) using AutoCAD and Revit, ensuring 100% compliance.
+        - Modeled and designed 5+ reinforced concrete and steel structures (beams, columns, slabs, and trusses) in SAP2000 and Robot Structural Analysis, optimizing section sizes to reduce material costs by 12% while meeting strength and serviceability limits.
+        - Performed 10+ on-site construction inspections, verifying formwork alignment, concrete cover, weld quality, and bolt torque against approved drawings—resolving 18 non-conformances before concrete placement to prevent rework.
 
-    - title: Associate Professor of Theoretical Physics
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1909 - 1911
-
-- title: Open Source Projects
-  type: time_table
+- title: Research Projects
+  type: list
   contents:
-    - title: <a href="https://github.com/alshedivat/al-folio">al-folio</a>
-      year: 2015-now
-      description: A beautiful, simple, clean, and responsive Jekyll theme for academics.
+    - Demonstrating the Use of Small Unmanned Aircraft System (sUAS) Capabilities and Data for Iowa Transportation and Infrastructure Work (Student Lead)
+    - Development of Iowa Pavement Analysis Techniques IPAT – Phase II (Student Lead)
+    - Evaluation of Machine Learning and Deep Learning Capabilities for Small Unmanned Aircraft Systems Data Analysis to Enhance the Efficiency of Airport Pavement Inspections (Co-Student Lead)
 
 - title: Honors and Awards
   type: time_table
   contents:
-    - year: 1921
+    - year: 2025
       items:
-        - Nobel Prize in Physics
-        - Matteucci Medal
-    - year: 2029
+        - Iowa State University Graduate and Professional Student Senate Professional Advancement Grants
+    - year: 2024
       items:
-        - Max Planck Medal
+        - Best Poster Award (3rd Place) in 13th Annual CCEE Student Research Showcase and Poster Competition, Iowa State University
+    - year: 2022
+      items:
+        - Best Poster Award (2nd Place) in 10th Annual CCEE Student Research Showcase and Poster Competition, Iowa State University
+    - year: 2019
+      items:
+        - Erasmus KA+ scholarship for top-performing undergraduate students in the Civil Engineering department
+        - Undergraduate second-best graduating student in the Civil Engineering department
+        - Deans' Honor List
 
-- title: Academic Interests
+- title: Conference Presentations
+  type: time_table
+  contents:
+    - year: 2025
+      items:
+        - Low-Altitude sUAS Flights for Remote Sensing of Submillimeter Hairline Cracks - A Case Study. ASCE International Conference on Transportation and Development
+        - Automatic pavement maintenance predictions using language and machine learning models. ASCE International Airfield and Highway Pavement
+    - year: 2024
+      items:
+        - Generalized Framework for Automatic Underground Utility Mapping. Energy Power Research Center 61st Annual Meeting
+
+- title: Professional Service
   type: nested_list
   contents:
-    - title: Topic 1.
+    - title: Journal and Conference Reviewer
       items:
-        - Description 1.
-        - Description 2.
-    - title: Topic 2.
+        - Transportation Research Board (TRB) Annual meeting
+        - ASCE International Conference of Transportation and Development (ICTD)
+        - Journal of Transportation Engineering Part B - Pavements
+    - title: Professional Memberships
       items:
-        - Description 1.
-        - Description 2.
+        - Member American Society of Civil Engineers (ASCE)
+        - Member ASCE - Uncrewed Aerial Systems UAS Committee
+        - Corresponding member - ASCE - Artificial Intelligence in Transportation Committee
+        - Member National Society of Black Engineers
+        - Member Black in Tech
 
-- title: Other Interests
-  type: list
+- title: Leadership and Volunteering
+  type: time_table
   contents:
-    - <u>Hobbies:</u> Hobby 1, Hobby 2, etc.
+    - title: ISU Graduate and Professional Student Senator
+      year: 2024 - 2025
+      description:
+        - Collaborated with fellow senators in institutionalizing new laws and resolutions for the good of the graduate students' community
+        - Served as an award review committee member
+    - title: Data Science Club, Vice President
+      year: 2022 - 2023
+      description:
+        - Organized training events for club members on different data science projects
+    - title: Hult Prize Competition (Global), Head of Logistics
+      institution: The University of Ibadan
+      description:
+        - Organized the university's largest entrepreneurial competition
+        - Acquired necessary funds from sponsors by presenting the club's vision and goals
+
+- title: Technical Skills
+  type: nested_list
+  contents:
+    - title: Programming Languages
+      items:
+        - Python, JavaScript, C++
+    - title: MLOps and Software Stacks
+      items:
+        - WandB, Mlflow, Docker, PostgreSQL, AWS DynamoDB, Lambda, Agile development, Azure, Linux, Flask, Django, CSS, HTML, Kubernetes, NextJS, Express, React
+    - title: Big Data & ETL
+      items:
+        - AWS (Glue, Athena, Kinesis, Data Pipeline, Aurora, Elastic Map Reduce), Apache Spark, SQL
+    - title: Other Skills
+      items:
+        - Team collaboration, PowerPoint presentation, problem-solving, leadership, teaching
+
+- title: Certifications
+  type: time_table
+  contents:
+    - year: 2023
+      items:
+        - AWS Certified Machine Learning - Specialty
+        - Coursera - Machine Learning by Stanford online
+        - Coursera - Generative AI with Large Language Model (LLM)
+        - Udacity nano degree - Computer Vision
+        - FAA remote pilot license

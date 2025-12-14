@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: Ph.D. Student in Intelligent Infrastructure Engineering & Computer Science
+subtitle: Ph.D. Candidate in Intelligent Infrastructure Engineering & Computer Science
 
 profile:
   align: right
@@ -27,32 +27,28 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-## AI and Infrastructure Management
+### Data Science | Artificial Intelligence | Infrastructure Management | Digital Twin
 
-I am a PhD candidate at Iowa State University working at the intersection of Civil Engineering and Computer Science. My research centers on rethinking how infrastructure condition is assessed, shifting from labor intensive manual inspection toward data driven, AI enabled decision making. My academic work can be found on [Google Scholar](https://scholar.google.com/citations?user=w1JdW5UAAAAJ&hl=en).
+I am a PhD candidate at Iowa State University working on the intersection of Civil Infrastructure Management and Computer Science. My research centers on rethinking how infrastructure condition is assessed, shifting from labor intensive manual inspection toward data driven, AI enabled decision making. More on my peer-reviewed academic works can be found on [Google Scholar](https://scholar.google.com/citations?user=w1JdW5UAAAAJ&hl=en).
 
 ### Education
 
-• **PhD in Intelligent Infrastructure Engineering and Computer Science**, in view  
+• **Ph.D. in Intelligent Infrastructure Engineering and Computer Science**, in view  
 Iowa State University
-
-• **Master of Science in Intelligent Infrastructure Engineering**  
+• **Master of Science in Intelligent Infrastructure Engineering** (2024)
 Iowa State University
-
-• **Bachelor of Science in Civil Engineering**
+• **Bachelor of Science in Civil Engineering** (2019)
 University of Ibadan, Nigeria
 
 
 ### Research Focus
 
-• **Computer Vision for Civil Infrastructure**  
-
-• **Autonomous Data Acquisition**  
-
+• **Computer Vision** 
+• **Large Language Model**  
+• **Autonomous Data Acquisition and Processing with sUAS**  
 • **Data Driven Infrastructure Analytics**  
-
 • **Data/Decision Science**  
-
+• **Causal Inference**  
 
 ---
 
