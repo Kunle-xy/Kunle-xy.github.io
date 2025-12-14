@@ -31,30 +31,30 @@ latest_posts:
 
 I am a PhD candidate at Iowa State University working on the intersection of Civil Infrastructure Management and Computer Science. My research centers on rethinking how infrastructure condition is assessed, shifting from labor intensive manual inspection toward data driven, AI enabled decision making. More on my peer-reviewed academic works can be found on [Google Scholar](https://scholar.google.com/citations?user=w1JdW5UAAAAJ&hl=en).
 
-#### Education
+#### **Education**
 
-• **Ph.D. in Intelligent Infrastructure Engineering and Computer Science**, in view  
+• Ph.D. in Intelligent Infrastructure Engineering and Computer Science, in view  
 Iowa State University
 
-• **Master of Science in Intelligent Infrastructure Engineering** (2024)
+• Master of Science in Intelligent Infrastructure Engineering (2024)
 Iowa State University
 
-• **Bachelor of Science in Civil Engineering** (2019)
+• Bachelor of Science in Civil Engineering (2019)
 University of Ibadan, Nigeria
 
 
-#### Research Focus
+#### **Research Focus**
 
-• **Computer Vision** 
-• **Large Language Model**  
-• **Autonomous Data Acquisition and Processing with sUAS**  
-• **Data Driven Infrastructure Analytics**  
-• **Data/Decision Science**  
-• **Causal Inference**  
+• Computer Vision
+• Large Language Model
+• Autonomous Data Acquisition and Processing with sUAS
+• Data Driven Infrastructure Analytics 
+• Data/Decision Science  
+• Causal Inference  
 
 ---
 
-### Contact
+### **Contact**
 
 [oguntoye@iastate.edu](mailto:oguntoye@iastate.edu)  
 [LinkedIn](https://linkedin.com/in/kunleoguntoye)  
