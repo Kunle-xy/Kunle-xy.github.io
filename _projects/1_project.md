@@ -20,33 +20,39 @@ This project implements A* to solve the classic 8-puzzle problem—a sliding til
 
 At its core, A* evaluates each state using:
 
-**f(n) = g(n) + h(n)**
+$$f(n) = g(n) + h(n)$$
 
 Where:
-- **f(n)**: Total estimated cost of the path through node n
-- **g(n)**: Actual cost from start to node n (number of moves made)
-- **h(n)**: Heuristic estimate of cost from n to goal
+- $$f(n)$$: Total estimated cost of the path through node $$n$$
+- $$g(n)$$: Actual cost from start to node $$n$$ (number of moves made)
+- $$h(n)$$: Heuristic estimate of cost from $$n$$ to goal
 
-The algorithm always expands the node with the lowest f(n) value, ensuring optimal pathfinding when the heuristic is admissible.
+The algorithm always expands the node with the lowest $$f(n)$$ value, ensuring optimal pathfinding when the heuristic is admissible.
 
 ---
 
 ## Three Key Properties of A* Heuristics
 
 ### 1. Admissibility
-A heuristic h(n) is **admissible** if it never overestimates the cost to reach the goal. For the 8-puzzle:
+A heuristic $$h(n)$$ is **admissible** if it never overestimates the cost to reach the goal. For the 8-puzzle:
 - **Manhattan Distance** is admissible: it counts the sum of horizontal and vertical distances each tile must travel
 - An admissible heuristic guarantees that A* finds the optimal solution
 
-### 2. Consistency (Monotonicity)
-A heuristic is **consistent** if for every node n and its successor n':
+$$h(n) \leq h^*(n)$$
 
-**h(n) ≤ cost(n, n') + h(n')**
+where $$h^*(n)$$ is the true optimal cost from $$n$$ to the goal.
+
+### 2. Consistency (Monotonicity)
+A heuristic is **consistent** if for every node $$n$$ and its successor $$n'$$:
+
+$$h(n) \leq c(n, n') + h(n')$$
+
+where $$c(n, n')$$ is the cost of moving from $$n$$ to $$n'$$.
 
 Consistency ensures that once a node is expanded, the path to it is optimal. Manhattan Distance is consistent for the 8-puzzle, making A* more efficient by avoiding redundant re-expansions.
 
 ### 3. Dominance
-Heuristic h₂ **dominates** h₁ if h₂(n) ≥ h₁(n) for all nodes n, and both are admissible. A dominant heuristic provides a tighter bound on the actual cost, leading to fewer node expansions. In this implementation:
+Heuristic $$h_2$$ **dominates** $$h_1$$ if $$h_2(n) \geq h_1(n)$$ for all nodes $$n$$, and both are admissible. A dominant heuristic provides a tighter bound on the actual cost, leading to fewer node expansions. In this implementation:
 - **Manhattan Distance dominates Tile Mismatch** (misplaced tiles)
 - Manhattan Distance explores significantly fewer states while maintaining optimality
 
@@ -60,7 +66,7 @@ This Java implementation offers three heuristic strategies:
 
 **2. Manhattan Distance** - Sums the horizontal and vertical distances for each misplaced tile (highly effective)
 
-**3. Double Move Heuristic** - Uses ⌈Manhattan Distance / 2⌉ for optimized exploration
+**3. Double Move Heuristic** - Uses $$\lceil \text{Manhattan Distance} / 2 \rceil$$ for optimized exploration
 
 ### Key Features:
 - Automatic solvability detection via inversion counting
@@ -83,18 +89,6 @@ Explore the complete implementation, compile the solver, and test it with sample
 4. Run with sample input: `java PuzzleSolver 8Puzzle.txt`
 
 The `8Puzzle.txt` file contains a sample 5-tile puzzle configuration. Try modifying it to test different puzzle scenarios and observe how each heuristic performs!
-
----
-
-## Sample Input Format
-
-```
-0 1 2
-3 4 5
-6 7 8
-```
-
-Where `0` represents the empty space, and the goal is to reach the sorted configuration shown above.
 
 ---
 
