@@ -1,81 +1,106 @@
 ---
 layout: page
-title: project 1
-description: with background image
+title: A* Algorithm - 8-Puzzle Solver
+description: Intelligent pathfinding with admissible heuristics
 img: assets/img/12.jpg
 importance: 1
 category: work
-related_publications: true
+github: https://github.com/Kunle-xy/OguntoyeProjects/tree/main/A*%20algorithm/Kunle_Oguntoye_proj1
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+## Why A* Algorithm Matters
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+The A* (A-star) algorithm is one of the most widely used pathfinding and graph traversal algorithms in computer science. From GPS navigation systems to video game AI, from robotics to logistics optimization, A* powers intelligent decision-making wherever efficient path discovery is critical. What makes A* particularly powerful is its guarantee to find the optimal solution while exploring fewer nodes than uninformed search algorithms like Breadth-First Search.
 
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
+This project implements A* to solve the classic 8-puzzle problem—a sliding tile puzzle that serves as an excellent benchmark for evaluating search algorithms.
 
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
-</div>
+---
 
-You can also put regular text between your rows of images, even citations {% cite einstein1950meaning %}.
-Say you wanted to write a bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.
+## The A* Formula
 
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
-</div>
+At its core, A* evaluates each state using:
 
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
+**f(n) = g(n) + h(n)**
 
-{% raw %}
+Where:
+- **f(n)**: Total estimated cost of the path through node n
+- **g(n)**: Actual cost from start to node n (number of moves made)
+- **h(n)**: Heuristic estimate of cost from n to goal
 
-```html
-<div class="row justify-content-sm-center">
-  <div class="col-sm-8 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-  <div class="col-sm-4 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-</div>
+The algorithm always expands the node with the lowest f(n) value, ensuring optimal pathfinding when the heuristic is admissible.
+
+---
+
+## Three Key Properties of A* Heuristics
+
+### 1. Admissibility
+A heuristic h(n) is **admissible** if it never overestimates the cost to reach the goal. For the 8-puzzle:
+- **Manhattan Distance** is admissible: it counts the sum of horizontal and vertical distances each tile must travel
+- An admissible heuristic guarantees that A* finds the optimal solution
+
+### 2. Consistency (Monotonicity)
+A heuristic is **consistent** if for every node n and its successor n':
+
+**h(n) ≤ cost(n, n') + h(n')**
+
+Consistency ensures that once a node is expanded, the path to it is optimal. Manhattan Distance is consistent for the 8-puzzle, making A* more efficient by avoiding redundant re-expansions.
+
+### 3. Dominance
+Heuristic h₂ **dominates** h₁ if h₂(n) ≥ h₁(n) for all nodes n, and both are admissible. A dominant heuristic provides a tighter bound on the actual cost, leading to fewer node expansions. In this implementation:
+- **Manhattan Distance dominates Tile Mismatch** (misplaced tiles)
+- Manhattan Distance explores significantly fewer states while maintaining optimality
+
+---
+
+## Implementation Highlights
+
+This Java implementation offers three heuristic strategies:
+
+**1. Tile Mismatch** - Counts tiles not in their goal positions (least informed, explores more nodes)
+
+**2. Manhattan Distance** - Sums the horizontal and vertical distances for each misplaced tile (highly effective)
+
+**3. Double Move Heuristic** - Uses ⌈Manhattan Distance / 2⌉ for optimized exploration
+
+### Key Features:
+- Automatic solvability detection via inversion counting
+- Efficient state management with circular doubly-linked lists
+- Duplicate state detection and path optimization
+- Comparative analysis across all three heuristics
+
+---
+
+## Try It Yourself
+
+Explore the complete implementation, compile the solver, and test it with sample puzzles:
+
+**[View Code on GitHub](https://github.com/Kunle-xy/OguntoyeProjects/tree/main/A*%20algorithm/Kunle_Oguntoye_proj1)**
+
+### Quick Start:
+1. Clone the repository
+2. Navigate to the project folder
+3. Compile: `javac *.java`
+4. Run with sample input: `java PuzzleSolver 8Puzzle.txt`
+
+The `8Puzzle.txt` file contains a sample 5-tile puzzle configuration. Try modifying it to test different puzzle scenarios and observe how each heuristic performs!
+
+---
+
+## Sample Input Format
+
+```
+0 1 2
+3 4 5
+6 7 8
 ```
 
-{% endraw %}
+Where `0` represents the empty space, and the goal is to reach the sorted configuration shown above.
+
+---
+
+## Technical Skills Demonstrated
+- Algorithm design and analysis
+- Data structures (circular doubly-linked lists)
+- Heuristic evaluation and optimization
+- Java programming and OOP principles
+- Problem-solving with informed search strategies
