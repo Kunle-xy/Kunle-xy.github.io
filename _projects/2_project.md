@@ -1,81 +1,107 @@
 ---
 layout: page
-title: project 2
-description: a project with a background image and giscus comments
-img: assets/img/3.jpg
+title: Monte Carlo Tree Search - Checkers AI
+description: Intelligent game-playing through adaptive simulation
+img: assets/img/CHECKERS2.png
 importance: 2
 category: work
 giscus_comments: true
+github: https://github.com/Kunle-xy/OguntoyeProjects/tree/main/Monte_Carlo%20Tree%20search/Kunle_Oguntoye_proj2
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+## Why Traditional Search Algorithms Fall Short
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+When building AI for games like Checkers, the traditional approach uses **Minimax**—an algorithm that exhaustively searches the game tree to find optimal moves. In theory, it sounds perfect: explore every possible move sequence and choose the path that guarantees the best outcome. In practice? It hits a computational wall.
 
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
+The problem is **combinatorial explosion**. With an average branching factor of 10 moves per turn in Checkers, searching just 8 moves deep requires evaluating 100 million positions. Search 12 moves deep? That's 1 trillion positions—computationally impossible for real-time gameplay.
 
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
-</div>
+Even with Alpha-Beta pruning cutting the search space in half, Minimax faces fundamental limitations:
 
-You can also put regular text between your rows of images.
-Say you wanted to write a little bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.
+1. **Fixed Depth Horizon** - Critical tactics often occur beyond the search depth cutoff
+2. **Heuristic Dependency** - Requires hand-crafted evaluation functions that may misvalue positions
+3. **Perfect Play Assumption** - Assumes opponents never make mistakes, missing opportunities to set traps or create complexity
+4. **Exponential Scaling** - Doubling the search depth squares the computational cost
 
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
-</div>
+---
 
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
+## Enter Monte Carlo Tree Search
 
-{% raw %}
+Monte Carlo Tree Search (MCTS) takes a radically different approach: instead of trying to exhaustively search everything, it **learns by experience**. MCTS runs thousands of random game simulations, building statistics about which moves lead to victories. The more simulations it runs, the more confident it becomes about good moves.
 
-```html
-<div class="row justify-content-sm-center">
-  <div class="col-sm-8 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-  <div class="col-sm-4 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-</div>
-```
+### The Four Pillars of MCTS
 
-{% endraw %}
+**1. Selection** - Navigate the tree using the **Upper Confidence Bound for Trees (UCT)** formula, balancing exploitation of known good moves with exploration of untried options:
+
+$$\text{UCT}(v) = \frac{Q(v)}{N(v)} + c \sqrt{\frac{\ln N(\text{parent})}{N(v)}}$$
+
+**2. Expansion** - Add one new unexplored move to the tree, focusing computational resources on promising branches
+
+**3. Simulation** - Play a complete random game from the new position to estimate its value
+
+**4. Backpropagation** - Update win/loss statistics for all moves on the path from root to leaf
+
+This iterative process naturally discovers strong strategies without needing expert knowledge or evaluation functions.
+
+---
+
+## Why MCTS Works
+
+**No Heuristics Required** - Game outcomes speak for themselves. Good positions naturally win more simulations than bad ones, even with random play.
+
+**Adaptive Depth** - MCTS automatically searches deeper in critical positions and shallower in routine ones, using computational resources efficiently.
+
+**Anytime Algorithm** - You can stop after any number of iterations and get a reasonable answer. Need a fast move? Run 50 simulations. Want stronger play? Run 500.
+
+**Handles Complexity** - High branching factors don't cripple MCTS the way they do Minimax. The algorithm simply focuses on promising branches and ignores clearly bad moves.
+
+**Mathematical Guarantee** - By the Law of Large Numbers, as simulations increase, MCTS converges to optimal play.
+
+---
+
+## Implementation Features
+
+This Java implementation showcases MCTS applied to Checkers with:
+
+- **Adjustable Difficulty Levels** - Easy (20 simulations), Medium (50), Hard (150)
+- **UCT-Based Selection** - Balances exploration vs exploitation with tunable exploration constant
+- **Efficient State Management** - Fast board copying and move generation
+- **Interactive GUI** - Play against the AI and watch it think
+- **Comprehensive Documentation** - Detailed mathematical analysis and algorithm explanation
+
+### Technical Highlights:
+- Tree node implementation with visit counts and win rates
+- Random playout simulation with terminal state detection
+- Backpropagation with reward inversion for opponent moves
+- Best move selection by most-visited node
+
+---
+
+## Dive Deeper
+
+Explore the complete implementation, including detailed mathematical proofs, complexity analysis, and strategy discussion:
+
+**[View Full Documentation on GitHub](https://github.com/Kunle-xy/OguntoyeProjects/tree/main/Monte_Carlo%20Tree%20search/Kunle_Oguntoye_proj2)**
+
+### Quick Start:
+1. Clone the repository
+2. Navigate to `Monte_Carlo Tree search/Kunle_Oguntoye_proj2`
+3. Compile: `javac edu/iastate/cs572/proj2/*.java`
+4. Run: `java edu.iastate.cs572.proj2.Checkers`
+5. Choose your difficulty level and challenge the AI!
+
+The repository includes extensive documentation covering:
+- Why Minimax fails for Checkers (with mathematical analysis)
+- The four pillars of MCTS (with algorithm pseudocode)
+- Complexity analysis comparing MCTS vs Minimax
+- Strategy tips for playing against the AI
+- Complete source code with detailed comments
+
+---
+
+## Technical Skills Demonstrated
+- Advanced search algorithms and game tree optimization
+- Statistical learning through Monte Carlo simulation
+- Multi-armed bandit problem (exploration-exploitation tradeoff)
+- Java programming with GUI development (Swing)
+- Algorithm analysis and complexity evaluation
+- Adaptive AI that improves with computational resources
