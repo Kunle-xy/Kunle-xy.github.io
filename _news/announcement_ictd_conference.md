@@ -22,6 +22,9 @@ Incredible learning experience at the **ASCE ICTD-Pavement 2025 conference**, wh
     <div class="col-sm mt-3 mt-md-0">
         {% include figure.liquid path="assets/img/news/ictd_1.jpg" class="img-fluid rounded z-depth-1" %}
     </div>
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid path="assets/img/news/ictd_2.png" class="img-fluid rounded z-depth-1" %}
+    </div>
 </div>
 
 #### Watch My Presentation
