@@ -20,13 +20,10 @@ Our research team applied machine learning and large language models to forecast
 
 <div class="col mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/news/poster_comp_fig1.jpg" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid path="assets/img/news/presentation_1.jpg" class="img-fluid rounded z-depth-1" %}
     </div>
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/news/poster_comp_fig2.jpg" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/news/poster_comp_fig3.jpg" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid path="assets/img/news/presentation_2.jpg" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 
