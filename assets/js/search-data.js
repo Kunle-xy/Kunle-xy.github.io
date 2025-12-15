@@ -17,7 +17,7 @@ ninja.data = [{
             window.location.href = "/publications/";
           },
         },{id: "nav-projects",
-          title: "Projects",
+          title: "projects",
           description: "",
           section: "Navigation",
           handler: () => {
@@ -444,7 +444,12 @@ ninja.data = [{
             },},{id: "news-a-simple-inline-announcement-with-markdown-emoji-sparkles-smile",
           title: 'A simple inline announcement with Markdown emoji! :sparkles: :smile:',
           description: "",
-          section: "News",},{id: "projects-a-algorithm-8-puzzle-solver",
+          section: "News",},{id: "news-paper-published-maintenance-record-enriched-ml-model-for-pavement-iri-prediction",
+          title: 'Paper Published: Maintenance Record-Enriched ML Model for Pavement IRI Prediction',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/announcement_pavement_iri_paper/";
+            },},{id: "projects-a-algorithm-8-puzzle-solver",
           title: 'A* Algorithm - 8-Puzzle Solver',
           description: "Intelligent pathfinding with admissible heuristics",
           section: "Projects",handler: () => {
