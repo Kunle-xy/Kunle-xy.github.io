@@ -2,7 +2,7 @@
 layout: page
 permalink: /teaching/
 title: teaching
-description: Teaching experience and instructional roles in civil engineering and intelligent infrastructure.
+description: 
 nav: true
 nav_order: 6
 ---
