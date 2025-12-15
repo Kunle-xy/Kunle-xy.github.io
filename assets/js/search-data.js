@@ -433,6 +433,11 @@ ninja.data = [{
           description: "",
           section: "Books",handler: () => {
               window.location.href = "/books/the_godfather/";
+            },},{id: "news-aws-certified-machine-learning-specialty",
+          title: 'AWS Certified Machine Learning - Specialty',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/announcement_aws_certification/";
             },},{id: "news-presented-at-asce-ictd-pavement-2025-conference",
           title: 'Presented at ASCE ICTD-Pavement 2025 Conference',
           description: "",
