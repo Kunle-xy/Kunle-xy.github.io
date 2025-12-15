@@ -467,6 +467,16 @@ ninja.data = [{
           description: "Data quality control and segmentation for infrastructure datasets",
           section: "Projects",handler: () => {
               window.location.href = "/projects/7_project/";
+            },},{id: "projects-retrieval-augmented-generation-rag",
+          title: 'Retrieval Augmented Generation (RAG)',
+          description: "Streamlined document analysis and comprehension using vector databases",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/8_project/";
+            },},{id: "projects-agriculture-monitoring-database",
+          title: 'Agriculture Monitoring Database',
+          description: "Data management system for agricultural infrastructure monitoring",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/9_project/";
             },},{
         id: 'social-cv',
         title: 'CV',
