@@ -5,9 +5,17 @@ description: Intelligent game-playing through adaptive simulation
 img: assets/img/CHECKERS2.png
 importance: 2
 category: work
-giscus_comments: true
 github: https://github.com/Kunle-xy/OguntoyeProjects/tree/main/Monte_Carlo%20Tree%20search/Kunle_Oguntoye_proj2
 ---
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/CHECKERS2.png" title="Monte Carlo Tree Search Checkers Game" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+    Interactive Checkers game powered by Monte Carlo Tree Search AI with adjustable difficulty levels.
+</div>
 
 ## Why Traditional Search Algorithms Fall Short
 
