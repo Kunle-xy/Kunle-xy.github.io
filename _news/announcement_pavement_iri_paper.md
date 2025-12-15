@@ -25,6 +25,9 @@ This research integrates maintenance textual data with numerical predictors for 
     <div class="col-sm mt-3 mt-md-0">
         {% include figure.liquid path="assets/img/news/pavement_iri_fig2.jpg" class="img-fluid rounded z-depth-1" %}
     </div>
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid path="assets/img/news/pavement_iri_fig3.jpg" class="img-fluid rounded z-depth-1" %}
+    </div>
 </div>
 
 ---
