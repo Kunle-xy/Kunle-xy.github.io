@@ -433,6 +433,11 @@ ninja.data = [{
           description: "",
           section: "Books",handler: () => {
               window.location.href = "/books/the_godfather/";
+            },},{id: "news-second-runner-up-at-isu-ccee-graduate-student-poster-competition",
+          title: 'Second Runner-Up at ISU CCEE Graduate Student Poster Competition',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/announcement_poster_competition/";
             },},{id: "news-paper-published-maintenance-record-enriched-ml-model-for-pavement-iri-prediction",
           title: 'Paper Published: Maintenance Record-Enriched ML Model for Pavement IRI Prediction',
           description: "",
