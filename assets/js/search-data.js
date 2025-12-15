@@ -442,6 +442,31 @@ ninja.data = [{
           description: "Intelligent game-playing through adaptive simulation",
           section: "Projects",handler: () => {
               window.location.href = "/projects/2_project/";
+            },},{id: "projects-hidden-markov-model-applications-in-financial-markets",
+          title: 'Hidden Markov Model Applications in Financial Markets',
+          description: "Statistical modeling for financial time series prediction",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/3_project/";
+            },},{id: "projects-kalman-filter-applications-in-finance",
+          title: 'Kalman Filter Applications in Finance',
+          description: "State-space modeling for financial forecasting",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/4_project/";
+            },},{id: "projects-causal-inference-a-case-study-of-uber-and-amazon",
+          title: 'Causal Inference: A Case Study of Uber and Amazon',
+          description: "Analyzing causal relationships in tech company operations",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/5_project/";
+            },},{id: "projects-gravel-road-infrastructure-monitoring",
+          title: 'Gravel Road Infrastructure Monitoring',
+          description: "Automated assessment of rural road conditions using geospatial data",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/6_project/";
+            },},{id: "projects-state-of-iowa-noisy-infrastructure-data-a-novel-segmentation-tool-for-quality-management",
+          title: 'State of Iowa Noisy Infrastructure Data: A Novel Segmentation Tool for Quality Management...',
+          description: "Data quality control and segmentation for infrastructure datasets",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/7_project/";
             },},{
         id: 'social-cv',
         title: 'CV',
