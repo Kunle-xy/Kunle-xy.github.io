@@ -6,7 +6,7 @@
     "email": "oguntoye@iastate.edu",
     "phone": "(515) 817-9451",
     "url": "https://Kunle-xy.github.io",
-    "summary": "Innovative researcher with a strong background in civil engineering, artificial intelligence, and computer vision. Pursuing a PhD in Intelligent Infrastructure Engineering at Iowa State University, I develop predictive models and multimodal sensing systems for pavement performance, infrastructure monitoring, and digital twin applications. My expertise spans machine learning applications, UAV-based data collection, and geospatial analytics—bridging data science and engineering to enhance decision-making, safety, and sustainability.",
+    "summary": "Innovative researcher and data scientist with a strong background in civil engineering, artificial intelligence, and computer vision. Pursuing a PhD in Intelligent Infrastructure Engineering at Iowa State University, I develop predictive models and multimodal sensing systems for pavement performance, infrastructure monitoring, and digital twin applications. My expertise spans MLOps, UAV-based data collection, and geospatial analytics—bridging data science and engineering to enhance decision-making, safety, and sustainability.",
     "location": {
       "address": "",
       "postalCode": "",
@@ -34,28 +34,18 @@
   },
   "work": [
     {
-      "name": "Musco Sport Lighting",
-      "position": "Machine Learning Engineer Intern (Computer Vision)",
-      "url": "https://musco.com",
-      "startDate": "May 2023",
-      "endDate": "August 2023",
-      "summary": "MLOps pipeline development and computer vision model deployment for people monitoring systems.",
-      "highlights": [
-        "Designed end-to-end MLOps pipeline using Mlflow, TensorBoard, and AWS, improving GPU utilization by 15%",
-        "Increased data annotation pipeline efficiency by 30% through optimized algorithms",
-        "Conducted hyperparameter tuning on YOLOv5 for improved object detection"
-      ]
-    },
-    {
       "name": "Iowa State University",
-      "position": "Graduate Research Assistant / Data Scientist",
+      "position": "Data Scientist",
       "url": "https://www.iastate.edu",
-      "startDate": "January 2022",
-      "endDate": "Present",
+      "startDate": "Jan. 2022",
+      "endDate": "Dec. 2026",
       "summary": "Research assistant developing AI/ML solutions for infrastructure monitoring and pavement performance prediction.",
       "highlights": [
-        "Developed high-speed predictive analytics models for forecasting pavement conditions using multimodal data",
+        "Developed high-speed predictive analytics models for forecasting pavement conditions using multimodal data, including maintenance text records and nationwide pavement datasets",
+        "Optimized machine learning models on cleaned datasets to accurately predict future concrete strength",
+        "Developed comprehensive buried utility interconnection knowledge database for AI-based fuzzy model, enabling automatic mapping without excavation",
         "Created web application using React and Django for utility engineers to generate underground utility maps, reducing wait times by 60%",
+        "Applied large language models alongside XGBoost to predict missing maintenance information in large-scale pavement datasets",
         "Developed automated object detection framework using Faster R-CNN and YOLO for drone-based utility asset detection"
       ]
     },
@@ -63,33 +53,54 @@
       "name": "Iowa State University",
       "position": "Developer / GIS Specialist / UAV Operations",
       "url": "https://www.iastate.edu",
-      "startDate": "January 2022",
+      "startDate": "Jan. 2022",
       "endDate": "Present",
       "summary": "Full-stack geospatial platform development and drone operations for infrastructure assessment.",
       "highlights": [
-        "Migrated monolithic application to event-driven AWS architecture (ECS Fargate, S3, EventBridge), reducing upload times from 5+ to <5 minutes and costs by 90%",
-        "Developed automated ArcGIS Python toolboxes for DEM analysis, reducing inspection time by 70%",
-        "Licensed FAA remote pilot conducting UAV operations for infrastructure data collection"
+        "Designed full-stack geospatial platform migrating from monolithic FastAPI to event-driven AWS architecture (ECS Fargate, S3, EventBridge) with NextJS/PostgreSQL; reduced upload times from 5+ to <5 minutes and costs by 90%",
+        "Developed comprehensive data collection plans with GCP maps in ArcGIS Pro",
+        "Operated UAVs as licensed FAA remote pilot, processing imagery into orthophotos and DEMs",
+        "Developed automated ArcGIS Python toolboxes for DEM analysis, reducing pavement inspection time by 70%",
+        "Coordinated with airport and county engineers for regulatory compliance and safe UAV operations"
+      ]
+    },
+    {
+      "name": "Musco Sport Lighting",
+      "position": "Machine Learning Engineer Intern (Computer Vision)",
+      "url": "https://musco.com",
+      "startDate": "May 2023",
+      "endDate": "Aug. 2023",
+      "summary": "MLOps pipeline development and computer vision model deployment for people monitoring systems.",
+      "highlights": [
+        "Championed design and deployment of end-to-end MLOps pipeline using Mlflow, TensorBoard, and AWS, improving GPU utilization by 15%",
+        "Spearheaded data collection strategy, leading field teams in camera system installation across multiple parks",
+        "Collaborated in Agile environment, completing internship project ahead of schedule",
+        "Increased data annotation pipeline efficiency by 30% through optimized stitching algorithms",
+        "Recognized as top 1% performer for high-quality results in time-sensitive tasks",
+        "Conducted hyperparameter tuning on YOLOv5 for improved object detection"
       ]
     },
     {
       "name": "Seflam SGI",
       "position": "Graduate Project Manager",
       "url": "",
-      "startDate": "February 2021",
-      "endDate": "December 2021",
+      "startDate": "Feb. 2021",
+      "endDate": "Dec. 2021",
       "summary": "Project management for oil and gas engineering projects in Nigeria.",
       "highlights": [
-        "Championed 3D modeling of mechanical and safety equipment at Nigeria LNG facility using LiDAR, cutting inspection time by 50%",
-        "Selected as top company representative at 2021 National Oil and Gas Conference"
+        "Championed 3D modeling of mechanical and safety equipment at Nigeria LNG facility using LiDAR and Leica Cyclone, cutting inspection time by 50%",
+        "Collaborated with project management and third-party logistics to resolve issues, reducing delays",
+        "Managed project bidding, task scheduling, and comprehensive risk assessments",
+        "Selected as top company representative at 2021 National Oil and Gas Conference",
+        "Designed and delivered training programs for new employees on proprietary software"
       ]
     },
     {
       "name": "Nexant Consulting LLP",
       "position": "Graduate Civil Engineer",
       "url": "",
-      "startDate": "June 2020",
-      "endDate": "February 2021",
+      "startDate": "Jun. 2020",
+      "endDate": "Feb. 2021",
       "summary": "Quality control and construction inspection for civil engineering projects.",
       "highlights": [
         "Led on-site quality control for 50+ material batches, reducing rejection rates by 18%",
@@ -100,12 +111,14 @@
       "name": "Morgan Omonitan and Abe Ltd.",
       "position": "Undergraduate Intern",
       "url": "",
-      "startDate": "August 2017",
-      "endDate": "February 2018",
+      "startDate": "Aug. 2017",
+      "endDate": "Feb. 2018",
       "summary": "Structural engineering internship in Lagos, Nigeria.",
       "highlights": [
         "Developed automated Excel spreadsheet with VBA macros for pile foundation design, cutting design time by 70%",
-        "Modeled and designed reinforced concrete and steel structures in SAP2000, optimizing section sizes to reduce material costs by 12%"
+        "Prepared detailed structural specifications using AutoCAD and Revit, ensuring 100% compliance",
+        "Modeled reinforced concrete and steel structures in SAP2000, optimizing section sizes to reduce material costs by 12%",
+        "Performed 10+ on-site inspections, resolving 18 non-conformances before concrete placement"
       ]
     }
   ],
@@ -117,8 +130,8 @@
       "url": "https://www.iastate.edu",
       "area": "Intelligent Infrastructure Engineering and Computer Science",
       "studyType": "Ph.D.",
-      "startDate": "January 2022",
-      "endDate": "December 2026",
+      "startDate": "Jan. 2022",
+      "endDate": "Dec. 2026",
       "score": "",
       "courses": ["Dissertation: Intelligent Computation in Infrastructure Monitoring"]
     },
@@ -128,21 +141,10 @@
       "url": "https://www.iastate.edu",
       "area": "Intelligent Infrastructure Engineering",
       "studyType": "M.S.",
-      "startDate": "January 2022",
+      "startDate": "Jan. 2022",
       "endDate": "May 2024",
       "score": "",
       "courses": ["Thesis: A Practical Framework for Automatic Underground Utility Mapping"]
-    },
-    {
-      "institution": "Universidad de Jaén",
-      "location": "Andalucía, Spain",
-      "url": "https://www.ujaen.es",
-      "area": "Exchange Program",
-      "studyType": "Study Abroad",
-      "startDate": "September 2019",
-      "endDate": "January 2020",
-      "score": "",
-      "courses": []
     },
     {
       "institution": "University of Ibadan",
@@ -150,8 +152,8 @@
       "url": "https://ui.edu.ng",
       "area": "Civil Engineering",
       "studyType": "B.S.",
-      "startDate": "June 2014",
-      "endDate": "July 2019",
+      "startDate": "Jun. 2014",
+      "endDate": "Jul. 2019",
       "score": "6.5/7.0",
       "courses": []
     }
@@ -203,35 +205,35 @@
   "certificates": [
     {
       "name": "AWS Certified Machine Learning - Specialty",
-      "date": "September 2023",
+      "date": "Sep. 2023",
       "issuer": "Amazon Web Services",
       "url": "",
       "icon": "fa-solid fa-cloud"
     },
     {
       "name": "Generative AI with Large Language Models",
-      "date": "August 2023",
+      "date": "Aug. 2023",
       "issuer": "Coursera",
       "url": "",
       "icon": "fa-solid fa-robot"
     },
     {
       "name": "Computer Vision Nanodegree",
-      "date": "March 2023",
+      "date": "Mar. 2023",
       "issuer": "Udacity",
       "url": "",
       "icon": "fa-solid fa-eye"
     },
     {
       "name": "Machine Learning by Stanford",
-      "date": "March 2023",
+      "date": "Mar. 2023",
       "issuer": "Coursera",
       "url": "",
       "icon": "fa-solid fa-brain"
     },
     {
       "name": "FAA Remote Pilot License",
-      "date": "January 2023",
+      "date": "Jan. 2023",
       "issuer": "Federal Aviation Administration",
       "url": "",
       "icon": "fa-solid fa-plane"
@@ -294,12 +296,12 @@
       "name": "Research Areas",
       "icon": "fa-solid fa-microscope",
       "keywords": [
-        "Infrastructure Monitoring",
-        "Computer Vision",
+        "Quantitative Research",
+        "Data Science",
         "Machine Learning",
-        "Pavement Infrastructure",
-        "Remote Sensing",
-        "Digital Twins"
+        "Computer Vision",
+        "Infrastructure Monitoring",
+        "Engineering"
       ]
     },
     {
