@@ -449,9 +449,9 @@ ninja.data = [{
           description: "Intelligent pathfinding with admissible heuristics",
           section: "Projects",handler: () => {
               window.location.href = "/projects/1_project/";
-            },},{id: "projects-project-2",
-          title: 'project 2',
-          description: "a project with a background image and giscus comments",
+            },},{id: "projects-monte-carlo-tree-search-checkers-ai",
+          title: 'Monte Carlo Tree Search - Checkers AI',
+          description: "Intelligent game-playing through adaptive simulation",
           section: "Projects",handler: () => {
               window.location.href = "/projects/2_project/";
             },},{id: "projects-project-3-with-very-long-name",
