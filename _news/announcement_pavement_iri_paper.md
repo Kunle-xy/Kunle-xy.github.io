@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Paper Published: Maintenance Record-Enriched ML Model for Pavement IRI Prediction"
-date: 2025-01-28 10:00:00-0600
+date: 2025-12-31 10:00:00-0600
 inline: false
 related_posts: false
 ---
@@ -18,7 +18,7 @@ This research integrates maintenance textual data with numerical predictors for 
 
 #### Research Visualizations
 
-<div class="row mt-3">
+<div class="col mt-3">
     <div class="col-sm mt-3 mt-md-0">
         {% include figure.liquid path="assets/img/news/pavement_iri_fig1.jpg" class="img-fluid rounded z-depth-1" %}
     </div>
