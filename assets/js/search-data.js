@@ -433,6 +433,11 @@ ninja.data = [{
           description: "",
           section: "Books",handler: () => {
               window.location.href = "/books/the_godfather/";
+            },},{id: "news-presented-at-asce-ictd-pavement-2025-conference",
+          title: 'Presented at ASCE ICTD-Pavement 2025 Conference',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/announcement_ictd_conference/";
             },},{id: "news-second-runner-up-at-isu-ccee-graduate-student-poster-competition",
           title: 'Second Runner-Up at ISU CCEE Graduate Student Poster Competition',
           description: "",
