@@ -78,29 +78,9 @@ Now each segment has:
 
 ## System Architecture
 
-The application employs a **three-tier cloud-native architecture** optimized for big data processing:
-
-### Frontend Layer (Next.js 14)
+The application employs a **two-tier cloud-native architecture** optimized for big data processing:
 
 ```
-┌─────────────────────────────────────────────────────────────┐
-│                     React Application                        │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐       │
-│  │   File       │  │  Segmentation │  │   Results    │       │
-│  │   Upload     │  │  Configuration│  │   Viewer     │       │
-│  │  Component   │  │   Component   │  │  Component   │       │
-│  └──────────────┘  └──────────────┘  └──────────────┘       │
-│         │                  │                  │              │
-│         └──────────────────┼──────────────────┘              │
-│                            │                                 │
-│                    ┌───────▼────────┐                        │
-│                    │  API Client    │                        │
-│                    │  (Fetch/Axios) │                        │
-│                    └────────────────┘                        │
-└─────────────────────────────────────────────────────────────┘
-                             │
-                     HTTP REST API
-                             │
 ┌─────────────────────────────────────────────────────────────┐
 │                    FastAPI Backend (Python)                  │
 │  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐       │
@@ -255,16 +235,7 @@ valid_segments = (std_lat < 0.0001) & (std_lon < 0.0001) & (std_from < 0.01)
 ## Technologies Used
 
 <div class="row">
-<div class="col-sm-4">
-
-**Frontend**
-- Next.js 14
-- React 18 + TypeScript
-- Tailwind CSS
-- Axios
-
-</div>
-<div class="col-sm-4">
+<div class="col-sm-6">
 
 **Backend**
 - FastAPI (Python 3.11)
@@ -273,7 +244,7 @@ valid_segments = (std_lat < 0.0001) & (std_lon < 0.0001) & (std_from < 0.01)
 - Uvicorn ASGI
 
 </div>
-<div class="col-sm-4">
+<div class="col-sm-6">
 
 **Data & Infrastructure**
 - Google BigQuery
@@ -341,7 +312,7 @@ valid_segments = (std_lat < 0.0001) & (std_lon < 0.0001) & (std_from < 0.01)
 
 ## Technical Skills Demonstrated
 
-- Full-stack web development (Next.js + FastAPI)
+- Backend API development with FastAPI
 - Big data processing with Google BigQuery
 - Infrastructure as Code (Terraform)
 - Data quality control and ETL pipelines
