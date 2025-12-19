@@ -455,13 +455,13 @@ ninja.data = [{
           description: "Analyzing causal relationships in tech company operations",
           section: "Projects",handler: () => {
               window.location.href = "/projects/5_project/";
-            },},{id: "projects-gravelroad-iowa-pavement-distress-analysis-system",
-          title: 'GravelRoad Iowa - Pavement Distress Analysis System',
+            },},{id: "projects-gravelroad-management-software",
+          title: 'GravelRoad Management Software',
           description: "Full-stack web application for automated rut detection and infrastructure monitoring using GeoTIFF analysis",
           section: "Projects",handler: () => {
               window.location.href = "/projects/6_project/";
-            },},{id: "projects-state-of-iowa-noisy-infrastructure-data-a-novel-segmentation-tool-for-quality-management",
-          title: 'State of Iowa Noisy Infrastructure Data: A Novel Segmentation Tool for Quality Management...',
+            },},{id: "projects-handling-messy-iowa-paved-road-big-data",
+          title: 'Handling Messy Iowa Paved Road Big Data',
           description: "Data quality control and segmentation for infrastructure datasets",
           section: "Projects",handler: () => {
               window.location.href = "/projects/7_project/";
