@@ -425,6 +425,11 @@ ninja.data = [{
           description: "",
           section: "News",handler: () => {
               window.location.href = "/news/announcement_pavement_iri_paper/";
+            },},{id: "projects-underground-utility-mapping",
+          title: 'Underground Utility Mapping',
+          description: "AI-Powered Probabilistic Framework for Automated Subsurface Infrastructure Detection Using Fuzzy Logic and Computer Vision",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/10_project/";
             },},{id: "projects-a-algorithm-8-puzzle-solver",
           title: 'A* Algorithm - 8-Puzzle Solver',
           description: "Intelligent pathfinding with admissible heuristics",
