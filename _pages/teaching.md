@@ -66,3 +66,31 @@ Special thanks to Professor Dr. Simon Laflamme for this opportunity to contribut
         {% include figure.liquid path="assets/img/news/TA_2.jpg" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
+
+---
+
+## Educational Content Creation
+
+### Ground Control Point (GCP) Mapping Tutorial Series
+
+I created a **step-by-step video playlist** demonstrating the complete workflow for creating Ground Control Point maps—a critical tool in sUAS (small Unmanned Aircraft Systems) data collection campaigns.
+
+#### Why GCPs Matter
+
+Ground Control Points are essential for achieving high-precision georeferencing in drone-based photogrammetry and remote sensing. Proper GCP placement and retrieval directly impacts:
+
+- **Positional accuracy** of orthomosaics and digital elevation models
+- **Repeatability** of multi-temporal surveys for change detection
+- **Survey-grade quality** required for infrastructure monitoring applications
+
+#### Playlist Contents
+
+The tutorial series covers:
+
+1. **Planning GCP distribution** — Strategic placement for optimal coverage
+2. **Field deployment procedures** — Best practices for placing GCPs before flights
+3. **GPS/GNSS surveying** — Recording accurate coordinates for each control point
+4. **Post-processing workflow** — Integrating GCPs into photogrammetry software
+5. **Quality assessment** — Evaluating georeferencing accuracy and RMSE
+
+This resource supports researchers and practitioners working with drone-collected imagery for applications including infrastructure inspection, agricultural monitoring, and terrain mapping.
