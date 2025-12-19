@@ -467,7 +467,7 @@ ninja.data = [{
               window.location.href = "/projects/7_project/";
             },},{id: "projects-personaai-digital-avatar-with-rag",
           title: 'PersonaAI - Digital Avatar with RAG',
-          description: "Personalized AI assistant that mimics individual personality using Retrieval-Augmented Generation and LLAMA3",
+          description: "Personalized AI assistant that mimics individual personality using Retrieval-Augmented Generation and Llama 2 70B",
           section: "Projects",handler: () => {
               window.location.href = "/projects/8_project/";
             },},{id: "projects-agriculture-monitoring-database",
