@@ -93,4 +93,10 @@ The tutorial series covers:
 4. **Post-processing workflow** — Integrating GCPs into photogrammetry software
 5. **Quality assessment** — Evaluating georeferencing accuracy and RMSE
 
+#### Watch the Tutorial Series
+
+<div class="embed-responsive embed-responsive-16by9">
+  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/videoseries?list=PL8ZiJBnFwC8A59VN-IfSCcx8bSRqn2kO8" allowfullscreen></iframe>
+</div>
+
 This resource supports researchers and practitioners working with drone-collected imagery for applications including infrastructure inspection, agricultural monitoring, and terrain mapping.
