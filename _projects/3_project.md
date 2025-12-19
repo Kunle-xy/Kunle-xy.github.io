@@ -4,7 +4,7 @@ title: Hidden Markov Model - Market Regime Trading
 description: Decoding financial markets with probabilistic state machines
 img: assets/img/HMM_project.png
 importance: 3
-category: ai
+category: Artificial Intelligence
 github: https://github.com/Kunle-xy/OguntoyeProjects/tree/main/Hidden%20Markov%20Model/HMM_Multi
 ---
 

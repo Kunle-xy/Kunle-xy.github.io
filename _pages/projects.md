@@ -5,7 +5,7 @@ permalink: /projects/
 description:
 nav: true
 nav_order: 3
-display_categories: [ai, infrastructure, fun]
+display_categories: [Artificial Intelligence, infrastructure, other]
 horizontal: false
 ---
 

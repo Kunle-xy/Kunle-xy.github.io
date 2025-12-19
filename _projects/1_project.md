@@ -4,7 +4,7 @@ title: A* Algorithm - 8-Puzzle Solver
 description: Intelligent pathfinding with admissible heuristics
 img: assets/img/a_algorithm.png
 importance: 1
-category: ai
+category: Artificial Intelligence
 github: https://github.com/Kunle-xy/OguntoyeProjects/tree/main/A*%20algorithm/Kunle_Oguntoye_proj1
 ---
 

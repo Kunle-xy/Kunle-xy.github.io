@@ -4,7 +4,7 @@ title: Monte Carlo Tree Search - Checkers AI
 description: Intelligent game-playing through adaptive simulation
 img: assets/img/project_2_cover_photo.JPG
 importance: 2
-category: ai
+category: Artificial Intelligence
 github: https://github.com/Kunle-xy/OguntoyeProjects/tree/main/Monte_Carlo%20Tree%20search/Kunle_Oguntoye_proj2
 ---
 
