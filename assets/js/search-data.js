@@ -435,9 +435,9 @@ ninja.data = [{
           description: "Intelligent game-playing through adaptive simulation",
           section: "Projects",handler: () => {
               window.location.href = "/projects/2_project/";
-            },},{id: "projects-hidden-markov-model-applications-in-financial-markets",
-          title: 'Hidden Markov Model Applications in Financial Markets',
-          description: "Statistical modeling for financial time series prediction",
+            },},{id: "projects-hidden-markov-model-market-regime-trading",
+          title: 'Hidden Markov Model - Market Regime Trading',
+          description: "Decoding financial markets with probabilistic state machines",
           section: "Projects",handler: () => {
               window.location.href = "/projects/3_project/";
             },},{id: "projects-kalman-filter-applications-in-finance",
