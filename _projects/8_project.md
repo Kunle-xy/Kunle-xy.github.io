@@ -1,7 +1,7 @@
 ---
 layout: page
 title: PersonaAI - Digital Avatar with RAG
-description: Personalized AI assistant that mimics individual personality using Retrieval-Augmented Generation and LLAMA3
+description: Personalized AI assistant that mimics individual personality using Retrieval-Augmented Generation and Llama 2 70B
 img: assets/img/11.jpg
 importance: 8
 category: Artificial Intelligence
@@ -13,7 +13,7 @@ related_publications: true
 
 Traditional large language models provide generic responses that lack personal context. Training custom models from scratch to capture individual personalities is computationally expensive, resource-intensive, and raises significant privacy concerns. The fundamental question becomes: **How do we create AI systems that authentically represent individual personalities while remaining efficient, scalable, and privacy-preserving?**
 
-This challenge motivated the development of **PersonaAI**, a system that leverages Retrieval-Augmented Generation (RAG) combined with prompt-engineered LLAMA3 to create highly personalized digital avatars—offering a lightweight, sustainable alternative to traditional large language model training methods.
+This challenge motivated the development of **PersonaAI**, a system that leverages Retrieval-Augmented Generation (RAG) combined with prompt-engineered Llama 2 70B to create highly personalized digital avatars—offering a lightweight, sustainable alternative to traditional large language model training methods.
 
 ---
 
@@ -22,8 +22,8 @@ This challenge motivated the development of **PersonaAI**, a system that leverag
 PersonaAI combines three core technologies to deliver personalized AI interactions:
 
 1. **Retrieval-Augmented Generation (RAG)** - Dynamically retrieves relevant personal context from user documents
-2. **LLAMA3 Language Model** - Open-source foundation model fine-tuned through prompt engineering
-3. **Vector Similarity Search** - Cosine similarity-based retrieval to find contextually relevant information
+2. **Llama 2 70B Language Model** - Open-source foundation model deployed via Replicate API with dual-template prompt engineering
+3. **Vector Similarity Search** - Cosine similarity-based retrieval (top-2) to find contextually relevant information
 
 ### System Architecture
 
@@ -58,16 +58,17 @@ PersonaAI combines three core technologies to deliver personalized AI interactio
 │                    └────────────────┘                        │
 └─────────────────────────────────────────────────────────────┘
                              │
-                    LLAMA3 Model API
+                    Replicate API (Llama 2)
                              │
 ┌─────────────────────────────────────────────────────────────┐
-│                 LLAMA3 Language Model                        │
+│              Llama 2 70B Language Model                      │
 │                                                              │
 │  ┌──────────────────────────────────────────────────────┐   │
-│  │  Prompt-Engineered Response Generation               │   │
-│  │  - User personality context injection                │   │
-│  │  - Style-aware text generation                       │   │
-│  │  - Contextual Q&A with retrieved documents           │   │
+│  │  Dual-Template Prompt Engineering                    │   │
+│  │  - Empty database template (cold start)             │   │
+│  │  - Context template (RAG mode with top-2 docs)      │   │
+│  │  - System prompt: "helpful and truthful assistant"  │   │
+│  │  - Temperature 0.05 for factual consistency         │   │
 │  └──────────────────────────────────────────────────────┘   │
 └─────────────────────────────────────────────────────────────┘
 ```
@@ -133,7 +134,7 @@ for doc in user_documents:
 
 # Sort by similarity and retrieve top-k
 similarities.sort(reverse=True)
-top_k_docs = similarities[:k]  # Default k=5
+top_k_docs = similarities[:k]  # Default k=2
 ```
 
 ### Stage 3: Top-K Retrieval Strategy
@@ -147,146 +148,256 @@ Top-k retrieval selects the **k most relevant documents** based on similarity sc
 | K Value | Trade-offs |
 |---------|------------|
 | **k = 1** | Fastest, but may miss important context from slightly less similar documents |
-| **k = 3-5** | **Optimal balance** - captures diverse relevant context without noise |
-| **k = 10+** | Comprehensive context, but introduces irrelevant information and increases token costs |
+| **k = 2** | **Optimal balance** - Minimal noise while capturing primary context |
+| **k = 3-5** | More comprehensive context, but risks introducing less relevant information |
+| **k = 10+** | Too much noise, increases token costs and inference latency significantly |
 
-In PersonaAI, **k = 5** provides the sweet spot:
-- Enough context to capture personality nuances
-- Avoids overwhelming LLAMA3's context window
-- Reduces inference latency
-- Minimizes API costs for hosted models
+In PersonaAI, **k = 2** provides the sweet spot:
+- Focuses on the most relevant context without noise
+- Minimizes token usage for faster inference
+- Keeps prompts concise and focused
+- Reduces computational overhead for similarity search
+- Works well with Llama 2's context window
 
-**Dynamic K Selection (Advanced):**
+**Implementation:**
 ```python
-# Adaptive k based on similarity threshold
-top_k_docs = []
-for similarity, doc in similarities:
-    if similarity > 0.7:  # High relevance threshold
-        top_k_docs.append(doc)
-    if len(top_k_docs) >= 5:  # Cap at k=5
-        break
+# Calculate cosine similarity for all documents
+similarities = []
+for doc in user_documents:
+    # Dot product normalized by magnitudes
+    similarity = np.dot(query_embedding, doc.vector) / (
+        np.linalg.norm(query_embedding) * np.linalg.norm(doc.vector)
+    )
+    similarities.append((similarity, doc))
 
-# Fallback: if fewer than 3 high-quality matches, expand to k=5
-if len(top_k_docs) < 3:
-    top_k_docs = similarities[:5]
+# Sort and retrieve top-2
+similarities.sort(reverse=True)
+top_2_docs = similarities[:2]
+
+# Use top-2 as context for prompt
+context = "\n\n".join([doc.text for _, doc in top_2_docs])
 ```
 
 ---
 
 ## Prompt Engineering: The Secret Sauce
 
-PersonaAI's effectiveness comes from carefully engineered prompts that inject user personality into LLAMA3's responses.
+PersonaAI's effectiveness comes from carefully engineered prompts that adapt based on whether user documents are available. The implementation uses **two distinct prompt templates** to handle different scenarios.
 
-### Prompt Template Structure
+### System Prompt (Global Instruction)
 
-**System Prompt (Personality Injection):**
+All interactions begin with this system-level instruction sent to Llama 2:
+
 ```
-You are a digital avatar representing [USER_NAME]. Your goal is to respond
-in a manner that authentically reflects their communication style, tone, and
-personality based on their historical writing samples.
-
-Key personality traits extracted from user data:
-- Writing style: [casual/formal/technical]
-- Tone: [friendly/professional/humorous]
-- Common phrases: ["phrase1", "phrase2", "phrase3"]
-- Vocabulary level: [simple/moderate/advanced]
-- Sentence structure: [short/varied/complex]
-
-When responding, prioritize authenticity over generic helpfulness. Match the
-user's natural communication patterns.
+You are a helpful and truthful assistant, answer only if you know the answer.
+If you do not know the answer, truthfully say 'I do not know'.
 ```
 
-**Context Injection (Top-K Retrieved Documents):**
-```
-Here are relevant examples of how [USER_NAME] communicates on similar topics:
+This establishes the model's core behavior: **honesty over hallucination**.
 
---- Example 1 (Similarity: 0.89) ---
-[Retrieved document 1 text]
+### Prompt Template 1: Empty Database (Cold Start)
 
---- Example 2 (Similarity: 0.85) ---
-[Retrieved document 2 text]
+When a user has **not yet uploaded any documents**, PersonaAI uses this template:
 
---- Example 3 (Similarity: 0.82) ---
-[Retrieved document 3 text]
+```python
+prompt_template = """
+Respond to the QUESTION below:
+- If the QUESTION is a general greeting or an inquiry about personal welfare
+  (e.g., "How are you?" or "Good day"), reply in a friendly and jovial manner.
+  These responses should be warm and engaging.
 
---- Example 4 (Similarity: 0.78) ---
-[Retrieved document 4 text]
+- If the QUESTION is too specific and lacks the necessary context or details
+  for a comprehensive answer, kindly request that the user provide more specific
+  details or context to enable a more accurate response.
 
---- Example 5 (Similarity: 0.74) ---
-[Retrieved document 5 text]
-```
+- If the QUESTION can be answered with general knowledge and the answer is known,
+  provide a generalized, honest, and harmless answer.
 
-**User Query:**
-```
-Based on the examples above, respond to the following in [USER_NAME]'s style:
+- If you are unable to answer the QUESTION due to a lack of information, either
+  from the context provided or within general knowledge parameters, clearly state
+  "I DO NOT KNOW".
 
-[USER_PROMPT]
+QUESTION:
+{question}
 
-Remember to:
-1. Match their tone and vocabulary
-2. Use similar sentence structures
-3. Incorporate their characteristic phrases naturally
-4. Maintain their level of formality/informality
+ANSWER:
+"""
 ```
 
-### Why This Prompt Design Works
+**Key Design Principles:**
+1. **Graceful Greeting Handling** - Responds warmly to casual interactions without requiring context
+2. **Clarification Requests** - Proactively asks for more details when questions are vague
+3. **General Knowledge Fallback** - Leverages Llama 2's base knowledge when appropriate
+4. **Explicit Uncertainty** - Forces the model to admit ignorance rather than fabricate answers
 
-1. **Explicit Style Instructions** - LLAMA3 receives clear directives about personality traits
-2. **Concrete Examples** - Retrieved documents serve as few-shot learning examples
-3. **Similarity Scores** - Higher-ranked examples guide LLAMA3 toward most relevant patterns
-4. **Behavioral Constraints** - Reminders keep the model focused on authenticity over generic helpfulness
+### Prompt Template 2: With Context (RAG Mode)
 
-**Example Transformation:**
+When the user **has uploaded documents**, the top-2 retrieved documents are injected as context:
 
-| Generic LLM Response | PersonaAI Response (Casual User) |
-|---------------------|----------------------------------|
-| "I would recommend considering multiple factors when making this decision..." | "Honestly? I'd just go with what feels right. I usually weigh the pros/cons but my gut's pretty reliable lol" |
+```python
+prompt_template = """
+Respond to the QUESTION below:
+- If the QUESTION is a general greeting or an inquiry about welfare
+  (e.g., "How are you?" or "Good day"), reply in a friendly and jovial manner.
+  Do not include the CONTEXT in your response.
+
+- If the QUESTION requires specific information from the CONTEXT (provided below)
+  and the answer can be determined from the CONTEXT, provide that answer.
+
+- If the QUESTION pertains to general knowledge or topics not covered in the
+  CONTEXT, such as current events or public information, and if this information
+  is readily available to the model, provide an informed response using general
+  knowledge.
+
+- If the answer cannot be determined from the CONTEXT, is not within the general
+  knowledge capabilities of the model, or requires updated information that the
+  model cannot access, explicitly state the limitations and respond with
+  "I DO NOT KNOW".
+
+CONTEXT:
+{context}
+
+QUESTION:
+{question}
+
+ANSWER:
+"""
+```
+
+**Key Design Principles:**
+1. **Context-First Answering** - Prioritizes user-specific documents over general knowledge
+2. **Greeting Isolation** - Explicitly prevents context injection for casual conversation
+3. **Hybrid Knowledge** - Allows general knowledge when context doesn't cover the topic
+4. **Boundary Awareness** - Model understands when to use context vs. when to fall back
+
+### How Context is Injected
+
+The `{context}` placeholder is populated with the **top-2 retrieved documents**:
+
+```python
+# Retrieve top-2 most similar documents
+top_2_docs = cosine_similarity_search(query_embedding, k=2)
+
+# Format context as concatenated text
+context = "\n\n".join([
+    f"Document {i+1}:\n{doc.text}"
+    for i, (similarity, doc) in enumerate(top_2_docs)
+])
+
+# Inject into prompt template
+final_prompt = prompt_template.format(
+    context=context,
+    question=user_question
+)
+```
+
+### Why This Two-Template Approach Works
+
+| Scenario | Template Used | Rationale |
+|----------|---------------|-----------|
+| **New User (no docs)** | Empty Database Template | Provides helpful responses while encouraging document uploads |
+| **Established User** | Context Template | Leverages personal documents for authentic, personalized responses |
+| **Greeting/Small Talk** | Both (special handling) | Maintains natural conversation flow without forcing context |
+
+**Example Interaction Flow:**
+
+**Scenario 1: Empty Database**
+```
+User: "What's my favorite food?"
+System: Uses Template 1
+Model: "I do not have specific information about your preferences. Could you
+       share some details about your favorite foods so I can learn more about you?"
+```
+
+**Scenario 2: With Context**
+```
+Context (from top-2 docs):
+- "Just had the best Thai curry ever! Spicy food is life 🌶️"
+- "Can't decide between pizza and tacos for dinner. Both are amazing!"
+
+User: "What's my favorite food?"
+System: Uses Template 2
+Model: "Based on what you've shared, you love spicy food—especially Thai curry!
+       You also really enjoy pizza and tacos. Seems like you appreciate bold,
+       flavorful dishes!"
+```
+
+### Behavioral Constraints
+
+The prompts enforce critical constraints:
+
+1. **No Hallucination** - "I DO NOT KNOW" requirement prevents fabrication
+2. **Contextual Awareness** - Model knows when to use vs. ignore retrieved documents
+3. **Tone Preservation** - "Friendly and jovial" for greetings maintains personability
+4. **Explicit Clarification** - Requests more details instead of guessing
+
+This dual-template architecture allows PersonaAI to provide value **immediately** (even without documents) while becoming **increasingly personalized** as users upload more content.
 
 ---
 
-## LLAMA3 Model Selection
+## Llama 2 70B Model Selection
 
-**Why LLAMA3?**
+**Why Llama 2 70B?**
 
-PersonaAI uses **Meta's LLAMA3** (specifically LLAMA3-8B or LLAMA3-70B depending on deployment) for several critical reasons:
+PersonaAI uses **Meta's Llama 2 70B** via the Replicate API for several critical reasons:
 
-### 1. Open-Source Accessibility
-- **No API lock-in** - Can self-host for complete data privacy
-- **Cost efficiency** - No per-token charges for self-hosted deployments
-- **Customization** - Full control over model parameters and sampling strategies
+### 1. Large Parameter Count for Nuanced Understanding
+- **70 billion parameters** provide sophisticated language understanding
+- Captures subtle personality nuances in user documents
+- Better context integration compared to smaller models
+- Strong performance on instruction-following tasks
 
-### 2. Strong Instruction Following
-LLAMA3's instruction-tuning makes it exceptionally responsive to prompt engineering:
-- Accurately interprets system prompts
-- Maintains personality constraints across multi-turn conversations
+### 2. Open-Source with Commercial License
+- **Free for commercial use** (unlike GPT models with per-token charges)
+- Transparent model architecture and training approach
+- Community-driven improvements and optimizations
+- Can self-host for complete data privacy if needed
+
+### 3. Optimized for Instruction Following
+Llama 2's instruction-tuning makes it exceptionally responsive to structured prompts:
+- Accurately interprets conditional logic in prompts (if-then clauses)
+- Maintains behavioral constraints (e.g., "I DO NOT KNOW" requirement)
 - Balances creativity with consistency
+- Handles multi-paragraph context effectively
 
-### 3. Efficient Context Handling
-- **8K token context window** - Sufficient for top-k retrieved documents + conversation history
-- **Optimized attention mechanisms** - Fast inference even with long contexts
-- **KV-cache support** - Reduces latency for multi-turn dialogues
-
-### 4. Multilingual Capabilities
-Supports persona modeling across languages, enabling international deployment.
+### 4. Efficient Context Handling
+- **4K token context window** - Sufficient for top-2 retrieved documents + conversation history
+- Optimized attention mechanisms for long-context tasks
+- Fast inference via Replicate's optimized infrastructure
 
 ### Model Configuration
 
-**Inference Parameters:**
+**Inference Parameters (via Replicate API):**
 ```python
 llama_config = {
-    'model': 'llama3-8b-instruct',
-    'temperature': 0.7,  # Balance creativity and consistency
-    'top_p': 0.9,        # Nucleus sampling for natural variation
-    'max_tokens': 512,   # Reasonable response length
-    'frequency_penalty': 0.3,  # Reduce repetition
-    'presence_penalty': 0.2,   # Encourage topic diversity
+    'model': 'meta/llama-2-70b-chat',
+    'system_prompt': 'You are a helpful and truthful assistant...',
+    'temperature': 0.05,        # Very low for deterministic, factual responses
+    'top_p': 1,                 # No nucleus sampling (use full distribution)
+    'max_tokens': 800,          # Generous response length
+    'repetition_penalty': 1,    # No explicit repetition penalty
 }
 ```
 
 **Why These Parameters?**
-- **Temperature 0.7** - High enough for personality variation, low enough to stay on-topic
-- **Top-p 0.9** - Allows natural linguistic diversity while filtering extreme outliers
-- **Penalties** - Prevent the model from recycling phrases verbatim from retrieved docs
+
+| Parameter | Value | Rationale |
+|-----------|-------|-----------|
+| **Temperature 0.05** | Very low | Prioritizes factual, consistent responses over creativity; reduces hallucination risk |
+| **Top-p 1** | Full distribution | No truncation; all tokens considered for sampling |
+| **Max Tokens 800** | Long responses | Allows detailed, comprehensive answers |
+| **Repetition Penalty 1** | Neutral | No artificial penalty; lets natural language flow guide repetition |
+
+**Why Temperature 0.05?**
+
+The extremely low temperature is a **deliberate design choice** for PersonaAI:
+
+1. **Factual Consistency** - When answering from context, the model should extract information accurately, not creatively rephrase
+2. **Reduces Hallucination** - Lower temperature means higher probability tokens are heavily favored (more deterministic)
+3. **Respects "I DO NOT KNOW"** - Makes the model more likely to admit uncertainty rather than fabricate answers
+4. **Predictable Behavior** - Users expect consistent responses when asking the same question multiple times
+
+**Trade-off:** Lower creativity in language generation, but this is acceptable since PersonaAI prioritizes **authenticity** (reflecting user documents) over **novelty**.
 
 ---
 
@@ -337,28 +448,39 @@ POST /api/prompt/
 # 1. Generate query embedding
 query_vec = embed("What should I do this weekend?")
 
-# 2. Retrieve top-5 similar documents
-top_docs = cosine_similarity_search(query_vec, k=5)
+# 2. Retrieve top-2 similar documents via cosine similarity
+top_2_docs = cosine_similarity_search(query_vec, k=2)
 
-# 3. Build prompt with retrieved context
-prompt = build_persona_prompt(
-    user_personality_traits,
-    top_docs,
-    user_query
+# 3. Format context from top-2 documents
+context = "\n\n".join([doc.text for _, doc in top_2_docs])
+
+# 4. Select appropriate prompt template
+if user_has_documents:
+    prompt = context_template.format(context=context, question=user_query)
+else:
+    prompt = empty_template.format(question=user_query)
+
+# 5. Generate response with Llama 2 70B via Replicate
+response = replicate.run(
+    "meta/llama-2-70b-chat",
+    input={
+        "system_prompt": "You are a helpful and truthful assistant...",
+        "prompt": prompt,
+        "temperature": 0.05,
+        "top_p": 1,
+        "max_tokens": 800,
+        "repetition_penalty": 1
+    }
 )
-
-# 4. Generate response with LLAMA3
-response = llama3.generate(prompt, **llama_config)
 ```
 
 **Response:**
 ```json
 {
-  "response": "Ooh you should totally hit another trail if the weather's good! Maybe try that mountain loop you've been eyeing? Or if you're feeling lazy, just chill with a good book and some coffee ☕",
+  "response": "Based on your recent activities, you should definitely go for another hike if the weather permits! You mentioned loving outdoor adventures and finding them rejuvenating. Alternatively, if you prefer something more relaxed, you could enjoy a good book with your favorite coffee blend—you've mentioned both as weekend favorites.",
   "retrieved_docs": [
     {"text": "Just finished an amazing hike! ...", "similarity": 0.89},
-    {"text": "Love weekends where I can just...", "similarity": 0.82},
-    ...
+    {"text": "Love weekends where I can just...", "similarity": 0.82}
   ]
 }
 ```
@@ -380,7 +502,7 @@ response = llama3.generate(prompt, **llama_config)
 <div class="col-sm-6">
 
 **AI/ML Stack**
-- LLAMA3 (8B/70B)
+- Llama 2 70B (via Replicate API)
 - Sentence Transformers (embeddings)
 - NumPy (cosine similarity)
 - Docker (deployment)
@@ -396,9 +518,9 @@ PersonaAI prioritizes user data protection:
 
 1. **End-to-End Encryption** - Documents encrypted at rest and in transit
 2. **User Isolation** - Strict database-level separation per user
-3. **Local Deployment Option** - Self-host LLAMA3 to avoid third-party data sharing
+3. **Local Deployment Option** - Self-host Llama 2 to avoid third-party data sharing
 4. **JWT Authentication** - Secure, stateless authentication with token expiration
-5. **No Training Data Leakage** - RAG retrieval doesn't modify the base LLAMA3 model
+5. **No Training Data Leakage** - RAG retrieval doesn't modify the base Llama 2 model; only context injection at inference time
 
 ---
 
@@ -416,10 +538,10 @@ PersonaAI prioritizes user data protection:
 
 | Metric | Value |
 |--------|-------|
-| **Retrieval Speed** | <100ms for top-5 @ 10K documents |
-| **Inference Latency** | ~2s (LLAMA3-8B), ~5s (LLAMA3-70B) |
-| **Personality Match** | 87% user satisfaction in blind tests |
-| **Privacy Compliance** | GDPR/CCPA compliant with local deployment |
+| **Retrieval Speed** | <50ms for top-2 @ 10K documents |
+| **Inference Latency** | ~3-5s (Llama 2 70B via Replicate) |
+| **Context Efficiency** | Top-2 retrieval minimizes token usage |
+| **Privacy Compliance** | GDPR/CCPA compliant with local deployment option |
 
 ---
 
@@ -465,9 +587,10 @@ Available at: [arXiv:2503.15489](https://arxiv.org/abs/2503.15489)
 
 - Retrieval-Augmented Generation (RAG) architecture
 - Vector embeddings and cosine similarity search
-- Prompt engineering for personality modeling
-- LLAMA3 model deployment and optimization
+- Dual-template prompt engineering with conditional logic
+- Llama 2 70B deployment via Replicate API
 - Django REST API development
 - JWT authentication and security
 - Docker containerization
 - Privacy-preserving AI system design
+- Top-k retrieval optimization (k=2 strategy)
