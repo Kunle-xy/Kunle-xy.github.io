@@ -2,7 +2,7 @@
 layout: page
 title: "Handling Messy Iowa Paved Road Big Data"
 description: Data quality control and segmentation for infrastructure datasets
-img: assets/img/12.jpg
+img: assets/img/segmentation.png
 importance: 7
 category: infrastructure
 github: https://github.com/Kunle-xy/ipat-segmentation-APP
