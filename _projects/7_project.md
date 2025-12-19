@@ -76,48 +76,7 @@ Now each segment has:
 
 ---
 
-## System Architecture
-
-The application employs a **two-tier cloud-native architecture** optimized for big data processing:
-
-```
-┌─────────────────────────────────────────────────────────────┐
-│                    FastAPI Backend (Python)                  │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐       │
-│  │   Upload     │  │  Segmentation │  │   Results    │       │
-│  │   Endpoint   │  │   Processor   │  │   Endpoint   │       │
-│  │  (POST)      │  │   (POST)      │  │   (GET)      │       │
-│  └──────┬───────┘  └──────┬────────┘  └──────┬───────┘       │
-│         │                  │                  │              │
-│         └──────────────────┼──────────────────┘              │
-│                            │                                 │
-│                    ┌───────▼────────┐                        │
-│                    │  BigQuery      │                        │
-│                    │  Client SDK    │                        │
-│                    └────────────────┘                        │
-└─────────────────────────────────────────────────────────────┘
-                             │
-                    BigQuery SQL API
-                             │
-┌─────────────────────────────────────────────────────────────┐
-│               Google Cloud BigQuery (Data Layer)             │
-│                                                              │
-│  County-Specific Datasets:                                  │
-│  ┌──────────────────────────────────────────────────────┐   │
-│  │  ipat_[COUNTY_NAME]                                  │   │
-│  │  ├── raw_distress_2020                               │   │
-│  │  ├── raw_distress_2021                               │   │
-│  │  ├── raw_distress_2022                               │   │
-│  │  ├── all_years (UNION view)                          │   │
-│  │  ├── valid_routes (consecutive year filter)          │   │
-│  │  ├── distress_segmented (segment assignment)         │   │
-│  │  ├── distress_segmented_complete (completeness)      │   │
-│  │  └── distress_final (pivoted output)                 │   │
-│  └──────────────────────────────────────────────────────┘   │
-└─────────────────────────────────────────────────────────────┘
-```
-
-### Data Processing Pipeline
+## Data Processing Pipeline
 
 The segmentation engine executes entirely within BigQuery using SQL-based transformations:
 
