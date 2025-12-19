@@ -25,54 +25,6 @@ PersonaAI combines three core technologies to deliver personalized AI interactio
 2. **Llama 2 70B Language Model** - Open-source foundation model deployed via Replicate API with dual-template prompt engineering
 3. **Vector Similarity Search** - Cosine similarity-based retrieval (top-2) to find contextually relevant information
 
-### System Architecture
-
-```
-┌─────────────────────────────────────────────────────────────┐
-│                   Mobile/Web Application                     │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐       │
-│  │    User      │  │   Document   │  │    Chat      │       │
-│  │  Registration│  │    Upload    │  │  Interface   │       │
-│  └──────┬───────┘  └──────┬───────┘  └──────┬───────┘       │
-│         │                  │                  │              │
-│         └──────────────────┼──────────────────┘              │
-│                            │                                 │
-│                    JWT Authentication                        │
-└─────────────────────────────────────────────────────────────┘
-                             │
-                    RESTful API (Django)
-                             │
-┌─────────────────────────────────────────────────────────────┐
-│                   Django REST Framework                      │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐       │
-│  │     User     │  │   Document   │  │   Prompt     │       │
-│  │   Management │  │  Processing  │  │   Endpoint   │       │
-│  │  (JWT Auth)  │  │  (Embedding) │  │ (RAG+LLAMA)  │       │
-│  └──────┬───────┘  └──────┬───────┘  └──────┬───────┘       │
-│         │                  │                  │              │
-│         └──────────────────┼──────────────────┘              │
-│                            │                                 │
-│                    ┌───────▼────────┐                        │
-│                    │  Vector Store  │                        │
-│                    │  (Embeddings)  │                        │
-│                    └────────────────┘                        │
-└─────────────────────────────────────────────────────────────┘
-                             │
-                    Replicate API (Llama 2)
-                             │
-┌─────────────────────────────────────────────────────────────┐
-│              Llama 2 70B Language Model                      │
-│                                                              │
-│  ┌──────────────────────────────────────────────────────┐   │
-│  │  Dual-Template Prompt Engineering                    │   │
-│  │  - Empty database template (cold start)             │   │
-│  │  - Context template (RAG mode with top-2 docs)      │   │
-│  │  - System prompt: "helpful and truthful assistant"  │   │
-│  │  - Temperature 0.05 for factual consistency         │   │
-│  └──────────────────────────────────────────────────────┘   │
-└─────────────────────────────────────────────────────────────┘
-```
-
 ---
 
 ## How PersonaAI Works
