@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "State of Iowa Noisy Infrastructure Data: A Novel Segmentation Tool for Quality Management"
+title: "Handling Messy Iowa Paved Road Big Data"
 description: Data quality control and segmentation for infrastructure datasets
 img: assets/img/12.jpg
 importance: 7

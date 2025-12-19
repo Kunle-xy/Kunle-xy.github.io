@@ -1,6 +1,6 @@
 ---
 layout: page
-title: GravelRoad Iowa - Pavement Distress Analysis System
+title: GravelRoad Management Software
 description: Full-stack web application for automated rut detection and infrastructure monitoring using GeoTIFF analysis
 img: assets/img/gravel_road_cover.jpg
 importance: 2
