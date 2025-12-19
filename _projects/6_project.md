@@ -252,6 +252,30 @@ The PostgreSQL database includes these core models:
 
 ---
 
+## Demonstration Video
+
+Watch the full system demonstration showing the end-to-end workflow from DEM upload to rut analysis:
+
+<div class="row justify-content-sm-center">
+    <div class="col-sm-10 mt-3 mt-md-0">
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+            <iframe
+                src="https://www.youtube.com/embed/GxetYaEai7g"
+                title="GravelRoad Iowa Application Demo"
+                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+        </div>
+    </div>
+</div>
+<div class="caption">
+    Live demonstration of the GravelRoad Iowa web application showing file upload, map visualization, polygon drawing, and automated rut detection analysis.
+</div>
+
+---
+
 ## Results and Impact
 
 The GravelRoad Iowa system has been successfully deployed and validated against field measurements, demonstrating its effectiveness for practical pavement condition assessment.
