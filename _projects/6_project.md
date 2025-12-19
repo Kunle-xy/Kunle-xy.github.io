@@ -4,7 +4,7 @@ title: GravelRoad Iowa - Pavement Distress Analysis System
 description: Full-stack web application for automated rut detection and infrastructure monitoring using GeoTIFF analysis
 img: assets/img/gravel_road_cover.jpg
 importance: 2
-category: work
+category: infrastructure
 github: https://github.com/Kunle-xy/Gravel_Road_Monitoring_WebAPP
 ---
 

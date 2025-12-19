@@ -4,7 +4,7 @@ title: Underground Utility Mapping
 description: AI-Powered Probabilistic Framework for Automated Subsurface Infrastructure Detection Using Fuzzy Logic and Computer Vision
 img: assets/img/utility_map.jpg
 importance: 10
-category: research
+category: infrastructure
 related_publications: false
 ---
 

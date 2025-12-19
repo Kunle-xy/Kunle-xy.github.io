@@ -4,7 +4,7 @@ title: Retrieval Augmented Generation (RAG)
 description: Streamlined document analysis and comprehension using vector databases
 img: assets/img/11.jpg
 importance: 8
-category: work
+category: fun
 github: https://github.com/Kunle-xy/justRAGit
 ---
 
