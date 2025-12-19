@@ -49,6 +49,15 @@ I developed **IPAT Segmentation Analysis**, a full-stack web application that so
 
 ### The Result
 
+<div class="row justify-content-sm-center">
+    <div class="col-sm-10 mt-3 mt-md-0">
+        {% include figure.liquid path="assets/img/segmentation.png" title="Pavement Segmentation Process" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+    Visual representation of the temporal segmentation process showing how inconsistent pavement sections across years are standardized into uniform segments.
+</div>
+
 After processing, the same route example becomes:
 
 | Route | Segment | FROM_MEASURE | TO_MEASURE | IRI_2020 | IRI_2021 | IRI_2022 |
