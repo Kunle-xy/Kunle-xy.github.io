@@ -465,9 +465,9 @@ ninja.data = [{
           description: "Data quality control and segmentation for infrastructure datasets",
           section: "Projects",handler: () => {
               window.location.href = "/projects/7_project/";
-            },},{id: "projects-retrieval-augmented-generation-rag",
-          title: 'Retrieval Augmented Generation (RAG)',
-          description: "Streamlined document analysis and comprehension using vector databases",
+            },},{id: "projects-personaai-digital-avatar-with-rag",
+          title: 'PersonaAI - Digital Avatar with RAG',
+          description: "Personalized AI assistant that mimics individual personality using Retrieval-Augmented Generation and LLAMA3",
           section: "Projects",handler: () => {
               window.location.href = "/projects/8_project/";
             },},{id: "projects-agriculture-monitoring-database",
