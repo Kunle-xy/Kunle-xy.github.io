@@ -4,9 +4,9 @@
     - name: Full Name
       value: Kunle Sunday Oguntoye
     - name: Email
-      value: oguntoye@iastate.edu
-    - name: Phone
-      value: (515) 817-9451
+      value: oguntoye@iastate.edu | oguntoyek@gmail.com
+    # - name: Phone
+    #   value: (515) 817-9451
     - name: Links
       value: <a href="https://scholar.google.com/citations?user=w1JdW5UAAAAJ&hl=en">Google Scholar</a> | <a href="https://github.com/Kunle-xy">GitHub</a> | <a href="https://linkedin.com/in/kunleoguntoye">LinkedIn</a>
 
