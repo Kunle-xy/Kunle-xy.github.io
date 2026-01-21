@@ -90,7 +90,7 @@ Explore the complete implementation, including detailed mathematical proofs, com
 
 **[View Full Documentation on GitHub](https://github.com/Kunle-xy/OguntoyeProjects/tree/main/Monte_Carlo%20Tree%20search/Kunle_Oguntoye_proj2)**
 
-### Quick Start:
+### Quick Start
 1. Clone the repository
 2. Navigate to `Monte_Carlo Tree search/Kunle_Oguntoye_proj2`
 3. Compile: `javac edu/iastate/cs572/proj2/*.java`
