@@ -425,6 +425,11 @@ ninja.data = [{
           description: "",
           section: "News",handler: () => {
               window.location.href = "/news/announcement_pavement_iri_paper/";
+            },},{id: "news-first-time-presenter-at-trb-2026-annual-meeting",
+          title: 'First-Time Presenter at TRB 2026 Annual Meeting',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/announcement_trb_2026/";
             },},{id: "projects-underground-utility-mapping",
           title: 'Underground Utility Mapping',
           description: "AI-Powered Probabilistic Framework for Automated Subsurface Infrastructure Detection Using Fuzzy Logic and Computer Vision",
