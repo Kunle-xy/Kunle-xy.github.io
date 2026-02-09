@@ -34,33 +34,35 @@
   "work": [
     {
       "name": "Iowa State University",
-      "position": "Data Scientist",
+      "position": "Data Scientist | Researcher",
       "url": "https://www.iastate.edu",
       "startDate": "Jan. 2022",
       "endDate": "Dec. 2026",
-      "summary": "Research assistant developing AI/ML solutions for infrastructure monitoring and pavement performance prediction.",
+      "summary": "Developing AI/ML solutions for infrastructure monitoring and pavement performance prediction.",
       "highlights": [
+        "Developed and orchestrated an ELT pipeline using Apache Airflow for batch processing and ingestion of Iowa DOT raw pavement performance data into Google Cloud BigQuery",
+        "Developed advanced SQL queries for fast automatic segmentation of roadways into user-defined road lengths in BigQuery cloud service",
         "Developed high-speed predictive analytics models for forecasting pavement conditions using multimodal data, including maintenance text records and nationwide pavement datasets",
         "Optimized machine learning models on cleaned datasets to accurately predict future concrete strength",
         "Developed comprehensive buried utility interconnection knowledge database for AI-based fuzzy model, enabling automatic mapping without excavation",
-        "Created web application using React and Django for utility engineers to generate underground utility maps, reducing wait times by 60%",
-        "Applied large language models alongside XGBoost to predict missing maintenance information in large-scale pavement datasets",
+        "Developed web application using React and Django for utility engineers to generate underground utility maps, reducing wait times by 60%",
+        "Identified critical missing data in pavement infrastructure big data and applied LLMs alongside XGBoost to predict missing maintenance information",
         "Developed automated object detection framework using Faster R-CNN and YOLO for drone-based utility asset detection"
       ]
     },
     {
       "name": "Iowa State University",
-      "position": "Developer / GIS Specialist / UAV Operations",
+      "position": "GIS Specialist / UAV Operations",
       "url": "https://www.iastate.edu",
       "startDate": "Jan. 2022",
-      "endDate": "Present",
+      "endDate": "Dec. 2026",
       "summary": "Full-stack geospatial platform development and drone operations for infrastructure assessment.",
       "highlights": [
-        "Designed full-stack geospatial platform migrating from monolithic FastAPI to event-driven AWS architecture (ECS Fargate, S3, EventBridge) with NextJS/PostgreSQL; reduced upload times from 5+ to <5 minutes and costs by 90%",
-        "Developed comprehensive data collection plans with GCP maps in ArcGIS Pro",
+        "Designed and implemented full-stack geospatial data processing platform for Iowa gravel road analysis, enabling automatic localization of surface defects with high accuracy",
+        "Developed comprehensive data collection plans with GCP maps in ArcGIS Pro, improving data quality and operational efficiency",
         "Operated UAVs as licensed FAA remote pilot, processing imagery into orthophotos and DEMs",
         "Developed automated ArcGIS Python toolboxes for DEM analysis, reducing pavement inspection time by 70%",
-        "Coordinated with airport and county engineers for regulatory compliance and safe UAV operations"
+        "Coordinated with airport and local County engineers for regulatory compliance and safe UAV operations"
       ]
     },
     {
@@ -73,10 +75,10 @@
       "highlights": [
         "Championed design and deployment of end-to-end MLOps pipeline using Mlflow, TensorBoard, and AWS, improving GPU utilization by 15%",
         "Spearheaded data collection strategy, leading field teams in camera system installation across multiple parks",
-        "Collaborated in Agile environment, completing internship project ahead of schedule",
-        "Increased data annotation pipeline efficiency by 30% through optimized stitching algorithms",
-        "Recognized as top 1% performer for high-quality results in time-sensitive tasks",
-        "Conducted hyperparameter tuning on YOLOv5 for improved object detection"
+        "Collaborated in Agile environment, completing internship project ahead of schedule through iterative development and cross-team coordination",
+        "Developed optimized algorithms and scripts to stitch key features from dual-camera images with overlapping views",
+        "Developed end-to-end machine learning models on AWS using S3 and SageMaker's built-in algorithm",
+        "Conducted hyperparameter tuning on YOLOv5 for improved object detection of soccer balls in video frames"
       ]
     },
     {
@@ -85,13 +87,13 @@
       "url": "",
       "startDate": "Feb. 2021",
       "endDate": "Dec. 2021",
-      "summary": "Project management for oil and gas engineering projects in Nigeria.",
+      "summary": "Project management for engineering, procurement, and construction (EPC) company serving Oil and Gas companies.",
       "highlights": [
         "Championed 3D modeling of mechanical and safety equipment at Nigeria LNG facility using LiDAR and Leica Cyclone, cutting inspection time by 50%",
-        "Collaborated with project management and third-party logistics to resolve issues, reducing delays",
-        "Managed project bidding, task scheduling, and comprehensive risk assessments",
-        "Selected as top company representative at 2021 National Oil and Gas Conference",
-        "Designed and delivered training programs for new employees on proprietary software"
+        "Collaborated with project management and third-party logistics to track, monitor, and resolve project-related issues",
+        "Managed project bidding documentation, task scheduling, and comprehensive risk assessments",
+        "Selected as company representative at 2021 National Oil and Gas Conference",
+        "Designed and delivered training programs for new employees and interns on proprietary software"
       ]
     },
     {
@@ -102,8 +104,8 @@
       "endDate": "Feb. 2021",
       "summary": "Quality control and construction inspection for civil engineering projects.",
       "highlights": [
-        "Led on-site quality control for 50+ material batches, reducing rejection rates by 18%",
-        "Conducted 40+ phased inspections, resolving 25 critical deviations before final acceptance"
+        "Led on-site quality control for 50+ material batches; enforced compliance for concrete and rebar, reducing rejection rates by 18%",
+        "Conducted 40+ phased inspections across formwork, rebar placement, pouring, and curing; resolved 25 critical deviations before final acceptance"
       ]
     },
     {
@@ -114,9 +116,9 @@
       "endDate": "Feb. 2018",
       "summary": "Structural engineering internship in Lagos, Nigeria.",
       "highlights": [
-        "Developed automated Excel spreadsheet with VBA macros for pile foundation design, cutting design time by 70%",
+        "Developed automated Excel spreadsheet with VBA macros for pile foundation design, cutting design time by 70% for 200+ piles across 5 bridge projects",
         "Prepared detailed structural specifications using AutoCAD and Revit, ensuring 100% compliance",
-        "Modeled reinforced concrete and steel structures in SAP2000, optimizing section sizes to reduce material costs by 12%",
+        "Modeled 5+ reinforced concrete and steel structures in SAP2000 and Robot Structural Analysis, reducing material costs by 12%",
         "Performed 10+ on-site inspections, resolving 18 non-conformances before concrete placement"
       ]
     }
@@ -159,11 +161,25 @@
   ],
   "awards": [
     {
-      "title": "Iowa State University Graduate and Professional Student Senate Professional Advancement Grants",
+      "title": "GPSS Research Excellence Award",
+      "date": "2026",
+      "awarder": "Iowa State University",
+      "url": "",
+      "summary": "Recognition for scholarly contributions and research impact within the graduate and professional student community"
+    },
+    {
+      "title": "GPSS Professional Advancement Grant",
+      "date": "2026",
+      "awarder": "Iowa State University",
+      "url": "",
+      "summary": "Travel support for professional development"
+    },
+    {
+      "title": "GPSS Professional Advancement Grant",
       "date": "2025",
       "awarder": "Iowa State University",
       "url": "",
-      "summary": ""
+      "summary": "Travel support for professional development"
     },
     {
       "title": "Best Poster Award (3rd Place) - 13th Annual CCEE Student Research Showcase",
