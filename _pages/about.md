@@ -29,7 +29,11 @@ latest_posts:
 
 #### **Data Science | Artificial Intelligence | Infrastructure Management | Digital Twin**
 
-I am a PhD candidate at Iowa State University working on the intersection of Civil Infrastructure Management and Computer Science. My research centers on rethinking how infrastructure condition is assessed, shifting from labor intensive manual inspection toward data driven, AI enabled decision making. More on my peer-reviewed academic works can be found on [Google Scholar](https://scholar.google.com/citations?user=w1JdW5UAAAAJ&hl=en).
+I am a PhD candidate at Iowa State University working on the intersection of Civil Infrastructure Asset Management and Computer Science. My research centers on rethinking how infrastructure condition is assessed, shifting from labor-intensive manual inspection toward data-driven, AI-enabled decision making.
+
+At heart, I'm a data nerd. For the past 6 years, I've been immersed in data-related projects utilizing major data stacks including Python, SQL, PySpark, Apache Airflow, Databricks, Docker, and cloud platforms like AWS. I love working with data and extracting meaningful insights that drive business intelligence and inform actionable decisions.
+
+More on my peer-reviewed academic works can be found on [Google Scholar](https://scholar.google.com/citations?user=w1JdW5UAAAAJ&hl=en).
 
 #### **Education**
 
