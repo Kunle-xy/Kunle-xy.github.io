@@ -430,6 +430,11 @@ ninja.data = [{
           description: "",
           section: "News",handler: () => {
               window.location.href = "/news/announcement_trb_2026/";
+            },},{id: "news-received-the-gpss-research-excellence-award",
+          title: 'Received the GPSS Research Excellence Award',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/announcement_gpss_award/";
             },},{id: "projects-underground-utility-mapping",
           title: 'Underground Utility Mapping',
           description: "AI-Powered Probabilistic Framework for Automated Subsurface Infrastructure Detection Using Fuzzy Logic and Computer Vision",
